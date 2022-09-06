@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<h1>{{page.title}}</h1>
+    <p class="lead text-muted"> Базовые качественные продукты, которые помогут любому начинающему художнику (составлен <a href="{{page.author-profile}}">{{page.author}}</a>)
+  <div class="album py-5">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-masonry='{"percentPosition": true }'>
+      <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+        
+        {%- for p in page.products -%}
+        <div class="col">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <img src="{{p.img_url}}" class="card-img-top"  />
+              <h5 class="card-title">{{p.product_title}}</h5>
+              <p class="card-text">{{p.product_description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Яндекс.Маркет</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Леонардо</button>
+                </div>
+                <!-- <small class="text-muted">9 mins</small> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        {%- endfor -%}
+
+        
+      </div>
+    </div>
+  </div>

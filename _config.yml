@@ -33,7 +33,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 header_pages:
   - top-kits.html
-  - top-makers.html
+  # - top-makers.html
 
 collections:
   kits:

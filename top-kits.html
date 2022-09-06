@@ -3,3 +3,21 @@ layout: page
 title: Топ наборов
 permalink: /top-kits/
 ---
+
+<h1>Топ наборов для творчества</h1>
+<p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p>
+
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;">
+	 {%- for kit in site.kits -%}
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <img class="card-img-top" src="{{kit.cover}}">
+		  <a class="card-block stretched-link text-decoration-none" href="{{kit.url | relative_url}}" ></a>
+          <div class="card-body">
+            <h5 class="card-title">{{kit.title}}</h5>
+            <p class="card-text">{{kit.description}}</p>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+</div>
