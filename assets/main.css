@@ -1,3 +1,8 @@
+html, body {
+	width: auto!important;
+	overflow-x: hidden!important
+}
+
 .icon-list li::before {
 	display: block;
 	flex-shrink: 0;
