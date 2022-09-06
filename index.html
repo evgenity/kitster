@@ -1,0 +1,156 @@
+---
+layout: home
+---
+
+{%- assign authors = site.kits | map: "author" | uniq -%}
+{%- for a in  authors -%}
+{{a}}
+{%- endfor -%}
+
+
+<main class="pb-5">
+    <h1>Делимся продуктами для творчества</h1>
+    <p class="fs-5 col-md-8">stuffor.art – это сообщество мейкеров, где мы делимся продуктами, которые используем и любим, и узнаем, чем пользуются другие</p>
+
+    <!-- <div class="mb-5">
+      <a class="link-dark" href="../examples/" class="btn btn-dark btn-lg px-4">смотреть все наборы</a>
+    </div> -->
+
+    <hr class="col-3 col-md-2 mb-5">
+
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2>Наборы от мейкеров</h2>
+        <p>Узнай, чем пользуются мейкеры для создания своих работ</p>
+        <ul class="icon-list ps-0">
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="" rel="noopener" target="_blank">топ мейкеров</a></li>
+          <li class="text-muted d-flex align-items-start mb-1"><a class="link-dark" href="" rel="noopener" target="_blank">топ наборов</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Базовые наборы</h2>
+        <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p>
+        <ul class="icon-list ps-0">
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="sketch.html">Скетчинг карандашом</a></li>
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Рисунок акварелью</a></li>
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Комиксы в цвете</a></li>
+          <!-- <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">скульптура и лепка</a></li> -->
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Видеоблоги и подкасты</a></li>
+
+          {%- for kit in site.kits -%}
+            <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
+          {%- endfor -%}
+
+
+
+        </ul>
+      </div>
+    </div>
+
+<!--     <hr class="col-3 col-md-2 mb-5">
+
+    <h2>последние обновления</h2>
+    <div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;">
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+        <div class="card">
+          <img class="card-img-top" src="1.png">
+
+          <div class="card-body">
+            <h5 class="card-title">набор: скетчинг карандашом</h5>
+            <p class="card-text">базовый набор начинающего художника для скетчинга графитовым карандашом</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+        <div class="card">
+          <img class="card-img-top" src="6.png">
+
+          <div class="card-body">
+            <h5 class="card-title">набор: супергеройские комиксы в цвете</h5>
+            <p class="card-text">базовый набор начинающего художника для отрисовки комиксов маркерами</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+        <div class="card">
+          <img class="card-img-top" src="5.png">
+          <div class="card-body">
+            <h5 class="card-title">набор: рисунок в стиле манга</h5>
+            <p class="card-text">базовый набор начинающего художника для отрисовки манги</p>
+          </div>
+        </div>
+      </div> -->
+<!--       <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.33333333333333%; top: 0px;">
+        <div class="card p-3">
+          <figure class="p-3 mb-0">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div> -->
+<!--       <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.66666666666666%; top: 0px;">
+        <div class="card">
+          <img src="3.png" class="card-img-top">
+
+          <div class="card-body">
+            <h5 class="card-title">Продукт: Apple MacBook Pro with Apple M1 Chip </h5>
+            <p class="card-text">Достаточно шустрый, чтобы обрабатывать видео 4K и большие проекты. Компактный, чтобы поместиться во все сумки.</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.33333333333333%; top: 171px;">
+        <div class="card text-center p-3">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p>A well-known quote, contained in a blockquote element.</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-white">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div> -->
+     <!--  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.33333333333333%; top: 310px;">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has a regular title and short paragraph of text below it.</p>
+            <p class="card-text"><small class="text-muted">Обновлено 3 мин. назад</small></p>
+          </div>
+        </div>
+      </div> -->
+     <!--  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 362px;">
+        <div class="card">
+          <img class="card-img" src="2.png">
+        </div>
+      </div> -->
+     <!--  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.66666666666666%; top: 378px;">
+        <div class="card p-3 text-end">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p> заголовки с маленькой буквы - это стильно</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+              Аристотель <cite title="Source Title">О толковании</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div> -->
+<!--       <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.33333333333333%; top: 488px;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+            <p class="card-text"><small class="text-muted">Обновлено 3 мин. назад</small></p>
+          </div>
+        </div>
+      </div> -->
+  <!-- </div> -->
+  </main>
