@@ -2,12 +2,6 @@
 layout: home
 ---
 
-{%- assign authors = site.kits | map: "author" | uniq -%}
-{%- for a in  authors -%}
-{{a}}
-{%- endfor -%}
-
-
 <main class="pb-5">
     <h1>Делимся продуктами для творчества</h1>
     <p class="fs-5 col-md-8">stuffor.art – это сообщество мейкеров, где мы делимся продуктами, которые используем и любим, и узнаем, чем пользуются другие</p>
@@ -32,18 +26,9 @@ layout: home
         <h2>Базовые наборы</h2>
         <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p>
         <ul class="icon-list ps-0">
-          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="sketch.html">Скетчинг карандашом</a></li>
-          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Рисунок акварелью</a></li>
-          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Комиксы в цвете</a></li>
-          <!-- <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">скульптура и лепка</a></li> -->
-          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="">Видеоблоги и подкасты</a></li>
-
           {%- for kit in site.kits -%}
-            <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
+          <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
           {%- endfor -%}
-
-
-
         </ul>
       </div>
     </div>

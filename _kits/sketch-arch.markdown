@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Скетч архитектуры"
 date:   2022-09-06 12:11:11 +0300
 categories: jekyll update
 author: max
