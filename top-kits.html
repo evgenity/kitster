@@ -11,7 +11,7 @@ permalink: /top-kits/
 	 {%- for kit in site.kits -%}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
-          <img class="card-img-top" src="{{kit.cover}}">
+          <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
 		  <a class="card-block stretched-link text-decoration-none" href="{{kit.url | relative_url}}" ></a>
           <div class="card-body">
             <h5 class="card-title">{{kit.title}}</h5>
