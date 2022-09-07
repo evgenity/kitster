@@ -23,6 +23,16 @@ layout: page
 
 <!-- <hr class="col-3 col-md-2 mb-5"> -->
 
+<div class="row" style="font-size: 20px;">
+  {%- for tag in site.themes -%}
+  <div class='col col-md-3 col-sm-6'>
+    <a class='text-dark' href="#">
+      {{tag}}
+    </a>
+  </div>
+  {%- endfor -%}
+</div>
+
 
 
 <!-- <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p> -->
