@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-
 <div class="px-4 pt-5 my-5 text-center" style="margin-bottom: 20vh!important;">
     <h1 class="display-4 fw-bold">Наборы для творчества</h1>
     <div class="col-lg-6 mx-auto">
@@ -14,3 +13,46 @@ layout: page
       </div>
     </div>
   </div>
+
+<!-- <h1>Делимся продуктами для творчества</h1>
+<p class="fs-5 col-md-8">stuffor.art – это сообщество мейкеров, где мы делимся продуктами, которые используем и любим, и узнаем, чем пользуются другие</p>
+ -->
+<!-- <div class="mb-5">
+  <a class="link-dark" href="../examples/" class="btn btn-dark btn-lg px-4">смотреть все наборы</a>
+</div> -->
+
+<!-- <hr class="col-3 col-md-2 mb-5"> -->
+
+<div class="row" style="font-size: 20px;">
+  {%- for tag in site.themes -%}
+  <div class='col col-md-3 col-sm-6'>
+    <a class='text-dark' href="#">
+      {{tag}}
+    </a>
+  </div>
+  {%- endfor -%}
+</div>
+
+<div class="row g-5 my-5">
+  <div class="col-md-6">
+    <h2>Топ наборов от мейкеров</h2>
+    <p>Узнай, что рекомендуют популярные мейкеры для создания своих работ</p>
+    <ul class="icon-list ps-0">
+      <!-- <li class="d-flex align-items-start mb-1"><a class="link-dark" href="" rel="noopener" target="_blank">топ мейкеров</a></li> -->
+      <!-- <li class="text-muted d-flex align-items-start mb-1"><a class="link-dark" href="{{ site.baseurl }}{% link top-kits.html %}">Топ наборов</a></li> -->
+      {%- for kit in site.kits -%}
+      <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+
+  <div class="col-md-6">
+    <h2>Выбор редакции</h2>
+    <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p>
+    <ul class="icon-list ps-0">
+      {%- for kit in site.kits -%}
+      <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
