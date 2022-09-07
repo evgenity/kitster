@@ -23,36 +23,36 @@ layout: page
 
 <!-- <hr class="col-3 col-md-2 mb-5"> -->
 
-<div class="row" style="font-size: 20px;">
-  {%- for tag in site.themes -%}
-  <div class='col col-md-3 col-sm-6'>
-    <a class='text-dark' href="#">
-      {{tag}}
-    </a>
-  </div>
-  {%- endfor -%}
-</div>
 
-<div class="row g-5 my-5">
-  <div class="col-md-6">
-    <h2>Топ наборов от мейкеров</h2>
-    <p>Узнай, что рекомендуют популярные мейкеры для создания своих работ</p>
-    <ul class="icon-list ps-0">
-      <!-- <li class="d-flex align-items-start mb-1"><a class="link-dark" href="" rel="noopener" target="_blank">топ мейкеров</a></li> -->
-      <!-- <li class="text-muted d-flex align-items-start mb-1"><a class="link-dark" href="{{ site.baseurl }}{% link top-kits.html %}">Топ наборов</a></li> -->
-      {%- for kit in site.kits -%}
-      <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
-      {%- endfor -%}
-    </ul>
-  </div>
 
-  <div class="col-md-6">
-    <h2>Выбор редакции</h2>
-    <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p>
-    <ul class="icon-list ps-0">
-      {%- for kit in site.kits -%}
-      <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
+<!-- <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p> -->
+
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;">
+   {%- for kit in site.kits -%}
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <div class="card-header small py-0 border-0">
+            {{kit.status}}
+          </div>
+          <!-- <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}"> -->
+          <a class="card-block stretched-link text-decoration-none" href="{{kit.url | relative_url}}" ></a>
+          <div class="card-body">
+            <h5 class="card-title">{{kit.title}}</h5>
+            <p class="card-text mb-0">{{kit.description}}</p>
+          </div>
+          
+          <div class="d-flex card-footer border-0">
+            <div class="">
+                <img src="https://i.pravatar.cc/30?a={{kit.title}}" alt="..." class="rounded-circle">
+            </div>
+            <div class="ms-auto small my-auto">
+              <a class='link-dark' href="#">{{kit.author | escape}}</a>
+            </div>
+            <!-- <div class="my-auto">
+              <p class="small mb-0 my-auto">{{kit.products.size}} шт.</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
       {%- endfor -%}
-    </ul>
-  </div>
 </div>
