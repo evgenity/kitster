@@ -41,14 +41,13 @@ collections:
       permalink: /:collection/:name
 
 themes:
-  - Рисунок 
+  - Рисунок
   - Видео 
   - Подкасты 
   - Кулинария 
   - Книги 
   - Гейминг 
   - Скульптура 
-  - Подкасты
 
 # Exclude from processing.
 # The following items will not be processed, by default.

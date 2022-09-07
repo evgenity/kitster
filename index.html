@@ -23,9 +23,13 @@ layout: page
 
 <!-- <hr class="col-3 col-md-2 mb-5"> -->
 
-<div class="row" style="text-transform: lowercase;">
+<div class="row" style="font-size: 20px;">
   {%- for tag in site.themes -%}
-    <a class='col col-md-3 col-sm-6 text-dark' href="#">#{{tag}}</a>
+  <div class='col col-md-3 col-sm-6'>
+    <a class='text-dark' href="#">
+      {{tag}}
+    </a>
+  </div>
   {%- endfor -%}
 </div>
 
