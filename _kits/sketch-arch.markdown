@@ -2,10 +2,11 @@
 layout: kit
 title:  "Скетч архитектуры"
 date:   2022-09-06 12:11:11 +0300
-author: Dan Beardshaw
+author: "@danbeardshaw"
 author-profile: https://www.youtube.com/channel/UCH_yU13t2c1WB32-7AYLLQQ
 cover: "/assets/images/sketch/cover.png"
 description: Набор продвинутого художника для скетчинга архитектуры механическим карандашом
+status: Новое
 products:
   - product_title: Uni Mechanical Pencil Kurutoga Roulette Model
     product_description: Some quick example text to build on the card title and make up the bulk of the card's content. 
