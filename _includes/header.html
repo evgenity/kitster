@@ -7,8 +7,8 @@
     </a>
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto d-none d-sm-block">
       <a class="me-3 py-2 text-dark text-decoration-none" href="{{ "/" | relative_url }}">На главную</a>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="{{ "/" | relative_url }}">Блог</a>
-      <a class="me-3 py-2 text-dark text-decoration-none" href="#">Вход</a>
+      <a class="me-3 py-2 text-dark text-decoration-none" href="{{ site.baseurl }}{% link signup.html %}">Блог</a>
+      <a class="me-3 py-2 text-dark text-decoration-none" href="{{ site.baseurl }}{% link signup.html %}">Вход</a>
       <!-- {%- if page_paths -%}
         {%- for path in page_paths -%}
           {%- assign my_page = site.pages | where: "path", path | first -%}

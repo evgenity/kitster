@@ -26,7 +26,7 @@ layout: page
 <div class="row" style="font-size: 20px;">
   {%- for tag in site.themes -%}
   <div class='col col-md-3 col-sm-6'>
-    <a class='text-dark' href="#">
+    <a class='text-dark' href="{{ site.baseurl }}{% link signup.html %}">
       {{tag}}
     </a>
   </div>
@@ -59,7 +59,7 @@ layout: page
 
 <!-- <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p> -->
 
-<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;">
+<div class="row" data-masonry='{"percentPosition": true }'>
    {%- for kit in site.kits -%}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
