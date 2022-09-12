@@ -1,18 +1,51 @@
 ---
 layout: page
 ---
-<div class="px-4 pt-5 my-5 text-center" style="padding-bottom: 20vh!important;">
+
+<div style="min-height: 100vh;">
+<div class="alert alert-dark alert-dismissible fade show rounded-0 bg-transparent border-dark" role="alert">
+  У вас есть популярный блог, ютуб-канал или инстаграм? Узнайте <a class="link-dark" href="{{ site.baseurl }}{% link signin.html %}">о пользе аккаунта</a> на kitster!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+<div class="pt-5 my-5">
     <h1 class="display-4 fw-bold">Наборы для творчества</h1>
-    <div class="col-lg-6 mx-auto">
+    <div class="col-lg-12 ">
       <p class="lead mb-4">Здесь профессионалы рассказывают чем пользуются и что любят</p>
     </div>
-    <div class="overflow-hidden" style="max-height: 30vh;">
+<!--     <div class="overflow-hidden" style="max-height: 30vh;">
       <div class="container px-5">
-        <!-- <img src="{{ "/assets/images/screen.png" | relative_url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy"> -->
-        <!-- <img src="https://getbootstrap.com/docs/5.2/examples/heroes/bootstrap-themes.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy"> -->
+        <img src="{{ "/assets/images/screen.png" | relative_url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+        <img src="https://getbootstrap.com/docs/5.2/examples/heroes/bootstrap-themes.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
       </div>
+    </div> -->
+  </div>
+</div>
+
+<!-- <div id="carouselExampleCaptions" class="carousel slide mh-25 my-5" data-bs-ride="false">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/images/design-9.png" class="mh-100 d-block mw-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/design-9.png" class="mh-100 d-block mw-100" alt="...">
     </div>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
 
 <!-- <h1>Делимся продуктами для творчества</h1>
 <p class="fs-5 col-md-8">kitster.art – это сообщество мейкеров, где мы делимся продуктами, которые используем и любим, и узнаем, чем пользуются другие</p>
@@ -23,23 +56,21 @@ layout: page
 
 <!-- <hr class="col-3 col-md-2 mb-5"> -->
 
-<div class="row" style="font-size: 20px;">
+<!-- <div class="row mt-5" style="font-size: 20px;">
   {%- for tag in site.themes -%}
   <div class='col col-md-3 col-sm-6'>
-    <a class='text-dark' href="{{ site.baseurl }}{% link signup.html %}">
+    <a class='text-dark' href="{{ site.baseurl }}{% link signin.html %}">
       {{tag}}
     </a>
   </div>
   {%- endfor -%}
-</div>
+</div> -->
 
-<div class="row my-5">
+<!-- <div class="row my-5">
   <div class="col-md-6">
     <h2>Топ наборов от мейкеров</h2>
     <p>Узнай, что рекомендуют популярные мейкеры для создания своих работ</p>
     <ul class="icon-list ps-0">
-      <!-- <li class="d-flex align-items-start mb-1"><a class="link-dark" href="" rel="noopener" target="_blank">топ мейкеров</a></li> -->
-      <!-- <li class="text-muted d-flex align-items-start mb-1"><a class="link-dark" href="{{ site.baseurl }}{% link top-kits.html %}">Топ наборов</a></li> -->
       {%- for kit in site.kits -%}
       <li class="d-flex align-items-start mb-1"><a class="link-dark" href="{{kit.url | relative_url}}">{{kit.title}}</a></li>
       {%- endfor -%}
@@ -55,11 +86,13 @@ layout: page
       {%- endfor -%}
     </ul>
   </div>
-</div>
+</div> -->
 
 <!-- <p>Списки качественных и доступных продуктов, которые помогут погрузиться в любимое хобби</p> -->
 
-<div class="row" data-masonry='{"percentPosition": true }'>
+
+<h2 class="fw-bold">Лучшее за месяц</h2>
+<div class="row mt-3" data-masonry='{"percentPosition": true }'>
    {%- for kit in site.kits -%}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
