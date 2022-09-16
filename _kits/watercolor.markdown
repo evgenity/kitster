@@ -1,12 +1,12 @@
 ---
 layout: kit
-title:  "Скетч карандашом"
+title:  "Рисунок акварелью"
 date:   2022-09-06 10:11:11 +0300
-author: "evgenity"
+author: "krasnaya_smorodina"
 author-link: 
-author-avatar: "/assets/images/makers/evgenity.png"
-cover: "/assets/images/sketch/Spiderman_pencil_sketch_3.jpg"
-description: Набор начинающего художника для обучения
+author-avatar: "/assets/images/makers/krasnaya_smorodina.png"
+cover: "/assets/images/watercolor/strange_cosmic_object_on_the_transparent_background_0.jpg"
+description: Набор для рисунка акварелью
 status: Популярное
 products:
   - product_title: Бумага Color Copy A4 Office 250 г/м² 125 лист.

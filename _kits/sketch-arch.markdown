@@ -4,7 +4,7 @@ title:  "Скетч архитектуры"
 date:   2022-09-06 12:11:11 +0300
 author: "danbeardshaw"
 author-link: https://www.youtube.com/channel/UCH_yU13t2c1WB32-7AYLLQQ
-cover: "/assets/images/sketch/cover.png"
+cover: "/assets/images/sketch/beautiful_old_architecture_pencil_sketch_1.jpg"
 author-avatar: "/assets/images/makers/danbeardshaw.png.webp"
 description: Набор продвинутого художника для скетчинга архитектуры механическим карандашом
 status: Новое
