@@ -1,0 +1,22 @@
+---
+layout: page
+title: Топ мейкеров
+permalink: /makers/
+---
+
+{% assign all_authors = site.kits  | map : 'author' | uniq %}
+
+All mentioned in kits:
+<ul>
+	{% for a in all_authors %}
+	<li> <a href="/makers/{{a}}">{{ a }}</a> </li>
+	{% endfor %}
+</ul>
+
+
+All listed in config:
+<ul>
+	{% for a in site.makers %}
+	<li> <a href="/makers/{{a.name}}">{{ a.name }}</a> </li>
+	{% endfor %}
+</ul>

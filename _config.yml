@@ -39,6 +39,9 @@ collections:
   kits:
       output: true
       permalink: /:collection/:name
+  makers:
+      output: true
+      permalink: /:collection/:name
 
 themes:
   - Рисунок
