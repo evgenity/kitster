@@ -1,12 +1,12 @@
 ---
 layout: kit
-title:  "Скетч карандашом"
-date:   2022-09-06 10:11:11 +0300
-author: "evgenity"
+title:  "Стрельба из лука"
+date:   2022-09-06 10:13:11 +0300
+author: "krasnayasmorodina"
 author-link: 
-author-avatar: "/assets/images/makers/evgenity.png"
-cover: "/assets/images/sketch/Spiderman_pencil_sketch_3.jpg"
-description: Набор начинающего художника
+author-avatar: "/assets/images/makers/krasnaya_smorodina.png"
+cover: "/assets/images/archer/archer-kit-logo.png"
+description: Набор новичка для стрельбы из лука
 status: Популярное
 products:
   - product_title: Бумага Color Copy A4 Office 250 г/м² 125 лист.

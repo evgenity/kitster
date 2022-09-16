@@ -1,12 +1,12 @@
 ---
 layout: kit
-title:  "Скетч карандашом"
+title:  "Электронная музыка"
 date:   2022-09-06 10:11:11 +0300
-author: "evgenity"
+author: "AtlasTune"
 author-link: 
-author-avatar: "/assets/images/makers/evgenity.png"
-cover: "/assets/images/sketch/Spiderman_pencil_sketch_3.jpg"
-description: Набор начинающего художника
+author-avatar: "/assets/images/makers/atlastune_avatar.png"
+cover: "/assets/images/AtlasTuneKit/atlastunekitlogo.jpeg"
+description: Набор профессионального композитора музыки
 status: Популярное
 products:
   - product_title: Бумага Color Copy A4 Office 250 г/м² 125 лист.

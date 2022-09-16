@@ -2,7 +2,7 @@
 layout: kit
 title:  "Рисунок акварелью"
 date:   2022-09-06 10:11:11 +0300
-author: "krasnaya_smorodina"
+author: "krasnayasmorodina"
 author-link: 
 author-avatar: "/assets/images/makers/krasnaya_smorodina.png"
 cover: "/assets/images/watercolor/strange_cosmic_object_on_the_transparent_background_0.jpg"
