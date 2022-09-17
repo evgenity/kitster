@@ -1,7 +1,7 @@
 ---
 layout: kit
 title:  "Скетч архитектуры"
-date:   2022-09-06 12:11:11 +0300
+date:   2022-09-06 09:11:11 +0300
 author: "danbeardshaw"
 author-link: https://www.youtube.com/channel/UCH_yU13t2c1WB32-7AYLLQQ
 cover: "/assets/images/sketch/beautiful_old_architecture_pencil_sketch_1.jpg"
