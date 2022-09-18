@@ -36,19 +36,8 @@ layout: page
   </div>
 </div>
 
-  <form class="d-flex">
-    <div class="row m-auto">
-        <div class="col-8">
-          <input class="form-control rounded" id="inputMaker" placeholder="Найти мейкера">
-        </div>
-        <div class="col-3">
-          <button type="submit" class="btn btn-light rounded">Найти</button>
-        </div>
-    </div>
-  </form>
-
 <h2 class="fw-bold mt-5">Лучшие наборы за месяц</h2>
-<div class="row mt-3" data-masonry='{"percentPosition": true }' id="masonry-container">
+<div class="row mt-3" data-masonry='{"percentPosition": true }' id="masonry-cotainer">
    {%- for kit in site.kits -%}
       <div class="px-3 px-md-2 col-sm-6 col-lg-4 mb-4">
         <div class="card shadow-lg">
@@ -77,3 +66,14 @@ layout: page
       </div>
       {%- endfor -%}
 </div>
+
+<form class="d-flex">
+  <div class="row m-auto">
+      <div class="col-8">
+        <input class="form-control rounded-pill" id="inputMaker" placeholder="Найти мейкера по нику">
+      </div>
+      <div class="col-3">
+        <button type="submit" class="btn btn-light rounded-pill">Найти</button>
+      </div>
+  </div>
+</form>
