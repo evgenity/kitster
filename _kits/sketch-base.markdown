@@ -37,4 +37,8 @@ products:
     product_description: Помогает аккуратно стирать неточности 
     img_url: /assets/images/sketch/lastik-ruchka-tombow-mono-zero-eraser-kruglyi-nakonechnik-diametr-2-3-mm-chernyi-korpus-sh-mg-989400421.webp
     yandex_market_link: https://market.yandex.ru/product--lastik-ruchka-tombow-mono-zero-eraser-kruglyi-nakonechnik-diametr-2-3-mm-chernyi-korpus-sh-mg/989400421
+  - product_title: Koh-i-Noor Ластик
+    product_description: Лучший ластик на рынке
+    img_url: /assets/images/watercolor/koh-i-noor-lastik-1760426043.webp
+    yandex_market_link: https://market.yandex.ru/product--koh-i-noor-lastik/1760426043
 ---

@@ -9,17 +9,37 @@ layout: default
 
 {{ content }}
 
-<h2>Ваш кешбек</h2>
-<p>0.0 рублей</p>
+<h2>Начисления</h2>
+<table class="table table-striped table-hover table-sm">
+	<tr>
+		<th></th>
+		<th>Сумма (руб)</th>	
+	</tr>
+	<tr>
+		<td>Кешбек</td>
+		<td>0.0</td>
+	</tr>
+	<tr>
+		<td>Донаты</td>
+		<td>0.0</td>
+	</tr>
+	<tr>
+		<td>Бонусы</td>
+		<td>0.0</td>
+	</tr>
+</table>
 
-<p>Чтобы снять деньги - напишите своему менеджеру.</p>
+<p class="small">Чтобы снять деньги - напишите своему менеджеру.</p>
 
-<h2>Ваши наборы</h2>
-<ul>
+<h2>Эффективность наборов</h2>
+<table class="table table-striped table-hover table-sm">
 {%- for kit in site.kits -%}
-	<li>{{kit.title}}</li>
+	<tr>
+		<td>{{kit.title}}</td>
+		<td>0 переходов</td>
+	</tr>
 {%- endfor -%}
-</ul>
+</table>
 
 <h2>Покупки подписчиков</h2>
 <p>Пока нет покупок</p>
