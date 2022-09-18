@@ -6,7 +6,7 @@ author: "evgenity"
 author-link: 
 author-avatar: "/assets/images/makers/evgenity.png"
 cover: "/assets/images/sketch/Spiderman_pencil_sketch_3.jpg"
-description: Набор начинающего художника по советам от учителя рисования
+description: Набор начинающего художника для быстрого старта
 status: Популярное
 products:
   - product_title: Набор чернографитовых карандашей Castell 9000
@@ -33,5 +33,8 @@ products:
     product_description: Поможет разобраться как работают цвета, в комплекте есть отличный телесный цвет
     img_url: /assets/images/sketch-basic/vista-artista-nabor-markerov-manga-sma-12-12-sht-747545070.webp
     yandex_market_link: https://market.yandex.ru/product--vista-artista-nabor-markerov-manga-sma-12-12-sht/747545070
-
+  - product_title: Ластик-ручка Tombow MONO Zero Eraser
+    product_description: Помогает аккуратно стирать неточности 
+    img_url: /assets/images/sketch/lastik-ruchka-tombow-mono-zero-eraser-kruglyi-nakonechnik-diametr-2-3-mm-chernyi-korpus-sh-mg-989400421.webp
+    yandex_market_link: https://market.yandex.ru/product--lastik-ruchka-tombow-mono-zero-eraser-kruglyi-nakonechnik-diametr-2-3-mm-chernyi-korpus-sh-mg/989400421
 ---

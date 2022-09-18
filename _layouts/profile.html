@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="d-flex my-1 mb-3">
+     <img height="48px" width="48px" src="{{ site.baseurl }}{{page.author-avatar}}" alt="..." class="rounded-circle">
+	<h1 class="ms-3 my-auto">Профиль {{page.name}}</h1>
+</div>
+
+{{ content }}
+
+<h2>Ваш кешбек</h2>
+<p>0.0 рублей</p>
+
+<p>Чтобы снять деньги - напишите своему менеджеру.</p>
+
+<h2>Ваши наборы</h2>
+<ul>
+{%- for kit in site.kits -%}
+	<li>{{kit.title}}</li>
+{%- endfor -%}
+</ul>
+
+<h2>Покупки подписчиков</h2>
+<p>Пока нет покупок</p>
+
+<h2>Личный менеджер</h2>
+<p>Евгений Быков</p>
+<a class="link-dark" href="tel:+79851283708">Тел.: +79851283708</p>
+<a class="link-dark" href="https://t.me/evgenity">Tg: @evgenity</a>
