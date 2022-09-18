@@ -5,12 +5,12 @@ layout: default
 
 
 
-<div class="d-flex my-1">
+<div class="d-flex my-3">
      <img height="48px" width="48px" src="{{ site.baseurl }}{{page.author-avatar}}" alt="..." class="rounded-circle">
-	<h1 class="ms-3 my-auto">Наборы от {{page.name}}</h1>
+	<h1 class="ms-3 my-auto">{{page.name}}</h1>
 </div>
 
-
+<h2>Наборы</h2>
 <!-- <div class="card">
   <img class="card-img" src="{{ page.cover }}">
   <div class="card-img-overlay">
@@ -23,7 +23,7 @@ layout: default
 
 <br>
 
-<div class="row mt-3" data-masonry='{"percentPosition": true }' id="masonry-container">
+<div class="row data-masonry='{"percentPosition": true }' id="masonry-container">
    {%- for kit in site.kits -%}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
@@ -52,3 +52,6 @@ layout: default
       </div>
       {%- endfor -%}
 </div>
+
+<h2>Примеры работ</h2>
+<h2>Донаты</h2>
