@@ -10,6 +10,9 @@ layout: default
 	<h1 class="ms-3 my-auto">{{page.name}}</h1>
 </div>
 
+<!-- <h2>Примеры работ</h2>
+<h2>Задонатить</h2> -->
+
 <h2>Наборы</h2>
 <!-- <div class="card">
   <img class="card-img" src="{{ page.cover }}">
@@ -24,12 +27,13 @@ layout: default
 <br>
 
 <div class="row data-masonry='{"percentPosition": true }' id="masonry-container">
-   {%- for kit in site.kits -%}
+  {%- assign author_kits = site.kits | where: "author", page.name -%}
+   {%- for kit in author_kits -%}
       <div class="col-sm-6 col-lg-4 mb-4">
         <div class="card">
-          <div class="card-header small py-0 border-0">
+          <!-- <div class="card-header small py-0 border-0">
             {{kit.status}}
-          </div>
+          </div> -->
           <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
           <a class="card-block stretched-link text-decoration-none" href="{{kit.url | relative_url}}" ></a>
           <div class="card-body">
@@ -52,6 +56,3 @@ layout: default
       </div>
       {%- endfor -%}
 </div>
-
-<h2>Примеры работ</h2>
-<h2>Донаты</h2>
