@@ -1,12 +1,12 @@
 ---
 layout: kit
-title:  "Стримминг игр"
+title:  "Стриминг игр"
 date:   2022-09-06 10:13:11 +0300
 author: "krasnayasmorodina"
 author-link: 
 author-avatar: "/assets/images/makers/krasnaya_smorodina.png"
 cover: "/assets/images/video-streaming/an_adult_man_streaming_3.jpg"
-description: Набор для стримминга на популярных платформах
+description: Набор для стриминга на популярных платформах
 status: Популярное
 products:
   - product_title: Бумага Color Copy A4 Office 250 г/м² 125 лист.
