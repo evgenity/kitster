@@ -41,4 +41,8 @@ products:
     product_description: Лучший ластик на рынке
     img_url: /assets/images/watercolor/koh-i-noor-lastik-1760426043.webp
     yandex_market_link: https://market.yandex.ru/product--koh-i-noor-lastik/1760426043
+  - product_title: Перчатка для рисования
+    product_description: Помогает не размазывать рисунки
+    img_url: /assets/images/sketch-basic/perchatka-dlia-risovaniia-razmer-m-1763588633.webp
+    yandex_market_link: https://market.yandex.ru/product--perchatka-dlia-risovaniia-razmer-m/1763588633
 ---
