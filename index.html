@@ -82,16 +82,17 @@ themes:
       {%- endfor -%}
 </div>
 
-<form class="d-flex">
+<form class="d-flex" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
   <div class="row m-auto">
       <div class="col-8">
-        <input class="form-control rounded-pill" id="inputMaker" name="nickname" placeholder="Найти по нику" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
+        <input class="form-control rounded-pill" id="inputMaker" name="nickname" placeholder="Найти по нику" >
       </div>
       <div class="col-3">
         <button type="submit" class="btn btn-light rounded-pill">Найти</button>
       </div>
   </div>
 </form>
+
 <div class="d-flex">
   <div class="row mt-5 m-auto">
       {%- for t in page.themes -%}
