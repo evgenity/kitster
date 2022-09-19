@@ -1,5 +1,15 @@
 ---
 layout: page
+
+themes:
+  - Рисунок
+  - Видео 
+  - Подкасты 
+  - Кулинария 
+  - Книги 
+  - Гейминг 
+  - Скульптура 
+  - Музыка
 ---
 
 <!-- <div style="min-height: 100vh;"> -->
@@ -70,10 +80,20 @@ layout: page
 <form class="d-flex">
   <div class="row m-auto">
       <div class="col-8">
-        <input class="form-control rounded-pill" id="inputMaker" placeholder="Найти мейкера по нику">
+        <input class="form-control rounded-pill" id="inputMaker" placeholder="Найти по нику">
       </div>
       <div class="col-3">
         <button type="submit" class="btn btn-light rounded-pill">Найти</button>
       </div>
   </div>
 </form>
+<div class="d-flex">
+  <div class="row mt-5 m-auto">
+      {%- for t in page.themes -%}
+      <div class="col-4 col-md-3 col-lg-3" style="">
+        <a href="" class="link-dark text-muted" style="text-transform: lowercase;">#{{t}}</a>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
