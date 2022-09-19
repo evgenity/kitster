@@ -66,7 +66,12 @@ themes:
                 <img height="25px" width="25px" src="{{ site.baseurl }}{{kit.author-avatar}}" alt="..." class="rounded-circle">
             </div>
             <div class="ms-2 small my-auto">
-              <span class='link-dark' href="#" style='padding: 0px'>{{kit.author | escape}}</span>
+              <span class='link-dark' href="#" style='padding: 0px'>{{kit.author | escape}}
+              </span>
+            </div>
+            <div class="ms-auto">
+            <div class="badge rounded-pill bg-danger" style="padding-top: 2px;">pro</div>
+            <div class="badge rounded-pill bg-info" style="padding-top: 2px;"><i class="bi bi-check2"></i></div>
             </div>
             <!-- <div class="my-auto">
               <p class="small mb-0 my-auto">{{kit.products.size}} шт.</p>
@@ -96,4 +101,3 @@ themes:
       {%- endfor -%}
     </div>
   </div>
-
