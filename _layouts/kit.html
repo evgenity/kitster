@@ -2,6 +2,29 @@
 layout: default
 ---
 
+<div  class="mb-4 position-relative">
+  <img src="/assets/images/1500x500.png" alt="..." class="img img-fluid">
+  <div class="position-absolute" style="bottom: 0; left: 0px; background: rgba(255, 255, 255, 0.75);">
+          <div class="d-flex my-3 col-4">
+          <div class="position-relative">
+             <img height="48px" width="48px" src="{{ site.baseurl }}{{page.author-avatar}}" alt="..." class="rounded-circle">
+             <span class="position-absolute top-100 start-100 translate-middle badge rounded-pill bg-info" style="padding: 0px 1px 2px 2px;"><i class="bi bi-patch-check"></i></span>
+            </div>
+            <h1 class="ms-3 my-auto">{{page.author}}</h1>
+            </div>
+            <div class="m-1">Творческий деятель</div>
+</div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link link-dark">Наборы</a></li>
+    <li class="page-item"><a class="page-link link-dark" href="#">Донаты</a></li>
+    <li class="page-item"><a class="page-link link-dark" href="#">Работы</a></li>
+    <li class="page-item"><a class="page-link link-dark" href="#">Контакты</a></li>
+  </ul>
+</nav>
+
 <h1>{{page.title}}</h1>
     <p class="lead text-muted"> {{page.description}} (составлен <a href="/makers/{{page.author}}">{{page.author}}</a>)
   <div class="album py-5">
