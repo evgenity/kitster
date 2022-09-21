@@ -95,7 +95,7 @@ themes:
   <div class="row mt-5 m-auto">
       {%- for t in page.themes -%}
       <div class="col-4 col-md-3 col-lg-3" style="">
-        <a href="" class="link-dark text-muted" style="text-transform: lowercase;">#{{t}}</a>
+        <a href="{% link signin.html %}" class="link-dark text-muted" style="text-transform: lowercase;">#{{t}}</a>
       </div>
       {%- endfor -%}
     </div>
