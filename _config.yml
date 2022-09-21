@@ -28,8 +28,9 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 # theme: minima
-# plugins:
+plugins:
   # - jekyll-feed
+    - jekyll-sitemap
 
 header_pages:
   - top-kits.html
@@ -45,6 +46,8 @@ collections:
   profiles:
       output: true
       permalink: /:collection/:name
+
+url: "https://kitster.art"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
