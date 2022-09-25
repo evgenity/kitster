@@ -1,0 +1,95 @@
+---
+layout: page
+title: "Элементы"
+permalink: /elements/
+---
+
+<h1>Элементы</h1>
+
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+  {%- for kit in site.kits -%}
+  <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-header position-relative">
+      <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
+
+        <div class="position-absolute img-badges">
+            <div class="badge rounded-pill status-pro">💥 pro</div>
+            <div class="badge rounded-pill category category-drawing">✏️ рисунок</div>
+        </div>
+      </div>
+      <a class="card-block text-decoration-none" href="{{kit.url | relative_url}}" ></a> <!-- stretched-link  -->
+      <div class="card-body">
+        <h5 class="card-title">{{kit.title}}</h5>
+        <p class="card-text">{{kit.description}}</p>
+      </div>
+      <div class="d-flex card-footer border-0">
+        <img height="24px" width="24px" src="{{ site.baseurl }}{{kit.author-avatar}}" alt="..." class="rounded-circle">
+        <div class="ms-2 small my-auto">
+          <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author | escape}}
+          </span>
+        </div>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+</div>
+
+<style type="text/css">
+  .img-badges {
+    bottom: 10px;
+    left: 20px
+  }
+  .card {
+    border-radius: 30px;
+    border: none;
+    background: #ffffff;
+  }
+  .card-header {
+    padding: 0px;
+    border: none;
+  }
+  .card-header > img {
+    border-radius: 30px;
+  }
+  .card-footer:last-child {
+    border-radius: 0px 0px 30px 30px;
+    background: #ffffff;
+    padding-bottom: 15px;
+  }
+
+  .card-header:first-child {
+    border-radius: 30px 30px 0px 0px;
+    background: #ffffff;
+  }
+  .card-text {
+    display: none;
+  }
+  .card-title {
+  }
+  .card-body {
+    padding-bottom: 0px;
+  }
+  .card-author {
+    font-style: normal;
+    color: #222529;
+  }
+
+  .category {
+    color: black;
+
+  }
+
+  .status-pro {
+    background: #4F5360;
+  }
+  .category-all {
+    background-color: #FFCACA;
+  }
+
+  .category-drawing {
+    background-color: #FFF3CA;
+    color: black;
+  }
+
+</style>
