@@ -34,6 +34,10 @@ img {
   height: auto;
 }*/
 
+body {
+	background-color: rgb(238, 237, 240);
+}
+
 nav {
 	border: 1px solid white;
 	padding: 0px 15px;
@@ -49,6 +53,14 @@ header {
 	background: #7745D9;
 	padding-top: 10px;
 	height: 55px;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: -1;
+}
+
+footer {
+	background: #7745D9;
 }
 
 .main-page {
@@ -58,13 +70,6 @@ header {
 	width: 100vw;
 	position:fixed;
 	top: 55px;
-	z-index: -1;
-}
-
-header {
-	position: fixed;
-	top: 0;
-	width: 100vw;
 	z-index: -1;
 }
 
