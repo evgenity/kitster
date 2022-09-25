@@ -37,11 +37,12 @@ img {
 nav {
 	border: 1px solid white;
 	padding: 0px 15px;
-	margin: 5px;
+	margin-right: 10px;
 	border-radius: 25px;
 	text-transform: lowercase;
 	font-weight: 300;
 	font-size: 0.9rem;
+	line-height: 0.8;
 }
 
 header {
@@ -132,10 +133,15 @@ header {
 
 .status-pro {
   background: #4F5360;
+  padding: 6px;
 }
 
 .category-wrapper >  a {
   padding: 5px 10px;
+}
+
+.category-wrapper {
+	margin-top: 10px;
 }
 
 .category {
