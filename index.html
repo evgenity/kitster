@@ -1,28 +1,37 @@
 ---
-layout: page
+layout: default-first
 
-themes:
-  - Рисунок
-  - Видео 
-  - Подкасты 
-  - Кулинария 
-  - Книги 
-  - Гейминг 
-  - Скульптура 
-  - Музыка
+categories:
+  - name: 🔥 Все
+    class: category-all  
+  - name: ✏️ Рисунок
+    class: category-drawing
+  - name: 🎥 Видео
+    class: category-video
+  - name: 🎙 Подкасты
+    class: category-podcast
+  - name: 🍽 Кулинария
+    class: category-cooking
+  - name: 📚 Книги
+    class: category-books
+  - name: 🎮 Гейминг
+    class: category-gaming
+  - name: 🎼 Музыка
+    class: category-music
 ---
 
 <!-- <div style="min-height: 100vh;"> -->
-<div class="alert alert-dark alert-dismissible fade show rounded-0 bg-transparent border-dark" role="alert">
+<!-- <div class="alert alert-dark alert-dismissible fade show rounded-0 bg-transparent border-dark" role="alert">
   У вас есть популярный блог, ютуб-канал или инстаграм? Узнайте <a class="link-dark" href="{{ site.baseurl }}{% link signin.html %}">о пользе аккаунта</a> на kitster!
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+</div> -->
 
-
-<div class="pt-3 mb-5">
+<div class="main-page">
+<div class="col-lg-9 mx-auto">
+<div class="p-3 pt-5">
     <h1 class="display-4 fw-bold">Узнай своих кумиров</h1>
     <div class="col-lg-12 ">
-      <p class="lead mb-4">Здесь профессионалы рассказывают чем пользуются и что любят</p>
+      <p class="lead">Здесь профессионалы рассказывают чем пользуются и что любят</p>
     </div>
 <!--     <div class="overflow-hidden" style="max-height: 30vh;">
       <div class="container px-5">
@@ -31,7 +40,7 @@ themes:
       </div>
     </div> -->
   </div>
-<form class="d-flex" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
+<!-- <form class="d-flex" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
   <div class="row m-auto">
       <div class="col-8">
         <input class="form-control rounded-pill" id="inputMaker" name="nickname" placeholder="Найти по нику" >
@@ -40,63 +49,83 @@ themes:
         <button type="submit" class="btn btn-light rounded-pill">Найти</button>
       </div>
   </div>
-</form>
-  <br>
-  <div class="row mt-5 mb-4">
-    <div class="col-sm-4 col-lg-4 d-none d-sm-block">
-      <img class="img img-fluid rounded-circle shadow-lg" src="/assets/images/DALL·E 2022-09-18 16.40.23 - master teaches apprentice, anime.png">
-    </div>
-    <div class="col-sm-4 col-lg-4 d-none d-sm-block">
-      <img class="img img-fluid rounded-circle shadow-lg" src="/assets/images/DALL·E 2022-09-17 21.28.25 - young apprentice learns from master during the renaissance, digital art.png">
-    </div>
-    <div class="col-sm-4 col-lg-4 d-none d-sm-block">
-      <img class="img img-fluid rounded-circle shadow-lg" src="/assets/images/DALL·E 2022-09-18 16.37.40 - master tutors apprentice , watercolor.png">
-    </div>
+</form> -->
+</div>
+</div>
 
+
+<div class="second-page">
+<div class="col-lg-9 mx-auto p-3 py-md-5">
+<h2 class="fw-bold mt-5 mb-4">Лучшие наборы за месяц</h2>
+
+<div class="row mb-4">
+  <div class="col-lg-8 d-flex flex-wrap">
+      {%- for c in page.categories -%}
+        <div class="category-wrapper">
+          <a href="#" class="category {{c.class}}">{{c.name}}</a>
+        </div>
+      {%- endfor -%}
+    </div>
   </div>
 
-<h2 class="fw-bold mt-5 mb-4">Лучшие наборы за месяц</h2>
-<div class="row mt-3" data-masonry='{"percentPosition": true }' id="masonry-container">
-   {%- for kit in site.kits -%}
-      <div class="px-3 px-md-2 col-sm-6 col-lg-4 mb-4">
-        <div class="card shadow-lg">
-<!--           <div class="card-header small py-0 border-0">
-            {{kit.status}}
-          </div> -->
-          <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
-          <a class="card-block stretched-link text-decoration-none" href="{{kit.url | relative_url}}" ></a>
-          <div class="card-body">
-            <h5 class="card-title">{{kit.title}}</h5>
-            <p class="card-text mb-0">{{kit.description}}</p>
-          </div>
-          
-          <div class="d-flex card-footer border-0">
-            <div class="">
-                <img height="25px" width="25px" src="{{ site.baseurl }}{{kit.author-avatar}}" alt="..." class="rounded-circle">
-            </div>
-            <div class="ms-2 small my-auto">
-              <span class='link-dark' href="#" style='padding: 0px'>{{kit.author | escape}}
-              </span>
-            </div>
-            <div class="ms-auto">
-            <div class="badge rounded-pill bg-danger" style="padding-top: 2px;">pro</div>
-            <!-- <div class="badge rounded-pill bg-info" style="padding-top: 2px;"><i class="bi bi-check2"></i></div> -->
-            </div>
-            <!-- <div class="my-auto">
-              <p class="small mb-0 my-auto">{{kit.products.size}} шт.</p>
-            </div> -->
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+  {%- for kit in site.kits -%}
+  <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-header position-relative">
+      <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
+
+        <div class="position-absolute img-badges">
+            <div class="badge rounded-pill status-pro">💥 pro</div>
+            <div class="badge rounded-pill category category-drawing">✏️ рисунок</div>
+        </div>
+      </div>
+      <a class="card-block text-decoration-none stretched-link" href="{{kit.url | relative_url}}" ></a> <!--   -->
+      <div class="card-body">
+        <h5 class="card-title">{{kit.title}}</h5>
+        <p class="card-text">{{kit.description}}</p>
+      </div>
+      <div class="d-flex card-footer border-0">
+        <img height="24px" width="24px" src="{{ site.baseurl }}{{kit.author-avatar}}" alt="..." class="rounded-circle">
+        <div class="ms-2 small my-auto">
+          <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author | escape}}
+          </span>
+        </div>
           </div>
         </div>
       </div>
       {%- endfor -%}
 </div>
 
-<div class="d-flex">
-  <div class="row mt-5 m-auto">
-      {%- for t in page.themes -%}
-      <div class="col-4 col-md-3 col-lg-3" style="">
-        <a href="{% link signin.html %}" class="link-dark text-muted" style="text-transform: lowercase;">#{{t}}</a>
+
+<h2 class="fw-bold mt-5 mb-4">Последние добавленные</h2>
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+{%- for kit in site.kits limit:3 -%}
+  <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-header position-relative">
+      <img class="card-img-top" src="{{ site.baseurl }}{{kit.cover}}">
+
+        <div class="position-absolute img-badges">
+            <div class="badge rounded-pill status-pro">💥 pro</div>
+            <div class="badge rounded-pill category category-drawing">✏️ рисунок</div>
+        </div>
+      </div>
+      <a class="card-block text-decoration-none stretched-link" href="{{kit.url | relative_url}}" ></a> <!--   -->
+      <div class="card-body">
+        <h5 class="card-title">{{kit.title}}</h5>
+        <p class="card-text">{{kit.description}}</p>
+      </div>
+      <div class="d-flex card-footer border-0">
+        <img height="24px" width="24px" src="{{ site.baseurl }}{{kit.author-avatar}}" alt="..." class="rounded-circle">
+        <div class="ms-2 small my-auto">
+          <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author | escape}}
+          </span>
+        </div>
+          </div>
+        </div>
       </div>
       {%- endfor -%}
-    </div>
-  </div>
+</div>
+</div>
+</div>

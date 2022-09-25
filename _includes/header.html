@@ -1,22 +1,12 @@
-<header class="mb-5">
+<header>
+<div class="col-lg-9 mx-auto mb-5">
   {%- assign default_paths = site.pages | map: "path" -%}
   {%- assign page_paths = site.header_pages | default: default_paths -%}
   <div class="d-flex">
-    <a href="{{ "/" | relative_url }}" class="d-flex align-items-center text-dark text-decoration-none" style="font-family: 'Dosis', serif;">
-      <!-- <img height="20px" width="20px" class="m-2" src="/favicon-32x32.png"/> -->
-      <span class="fs-4">kitster</span>
-    </a> 
-    <nav class="ms-auto d-flex">
-      <a class="me-3 my-auto text-dark text-decoration-none" href="{{ "/" | relative_url }}">На главную</a>
-      <a class="me-3 my-auto  text-dark text-decoration-none" href="{{ site.baseurl }}{% link signin.html %}">Вход</a>
-      <!-- {%- if page_paths -%}
-        {%- for path in page_paths -%}
-          {%- assign my_page = site.pages | where: "path", path | first -%}
-          {%- if my_page.title -%}
-          <a class="me-3 py-2 text-dark text-decoration-none" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-          {%- endif -%}
-        {%- endfor -%}
-      {%- endif -%} -->
+    <a href="{{ "/" | relative_url }}" class="d-flex align-items-center text-decoration-none header-logo">kitster</a> 
+    <nav class="ms-auto d-flex align-items-center">
+      <a class="mx-auto text-decoration-none header-item" href="{{ site.baseurl }}{% link signin.html %}">Вход</a>
     </nav>
   </div>
+</div>
 </header>

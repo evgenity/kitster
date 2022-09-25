@@ -30,3 +30,147 @@ img {
   max-width: 100%;
   height: auto;
 }*/
+
+nav {
+	border: 1px solid white;
+	padding: 0px 15px;
+	margin: 5px;
+	border-radius: 25px;
+	text-transform: lowercase;
+	font-weight: 300;
+	font-size: 0.9rem;
+}
+
+header {
+	background: #7745D9;
+	padding-top: 10px;
+	height: 55px;
+}
+
+.main-page {
+	background: #7745D9;
+	color: white;
+	height: 100vh;
+	width: 100vw;
+	position:fixed;
+	top: 55px;
+	z-index: -1;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	z-index: -1;
+}
+
+.footer-title, .footer-nav-item {
+	color: white;
+}
+
+.second-page {
+	background: #F5F5F5;
+	margin-top: 100vh;
+	z-index:1;
+}
+
+.header-logo {
+	padding-left: 16px;
+	font-family: 'Dosis', serif;
+	font-weight: 100;
+	font-size: 1.25rem;
+}
+
+.header-logo, .header-item  {
+	color: white !important;
+}
+
+.category {
+  text-transform: lowercase;
+}
+.img-badges {
+  bottom: 10px;
+  left: 20px
+}
+.card {
+  border-radius: 30px;
+  border: none;
+  background: #ffffff;
+}
+.card-header {
+  padding: 0px;
+  border: none;
+}
+.card-header > img {
+  border-radius: 30px;
+}
+.card-footer:last-child {
+  border-radius: 0px 0px 30px 30px;
+  background: #ffffff;
+  padding-bottom: 15px;
+}
+
+.card-header:first-child {
+  border-radius: 30px 30px 0px 0px;
+  background: #ffffff;
+}
+.card-text {
+  display: none;
+}
+.card-title {
+}
+.card-body {
+  padding-bottom: 0px;
+}
+.card-author {
+  font-style: normal;
+  color: #222529;
+}
+
+.status-pro {
+  background: #4F5360;
+}
+
+.category-wrapper >  a {
+  padding: 5px 10px;
+}
+
+.category {
+  color: black;
+  padding: 6px;
+  text-decoration-style: none;
+  text-decoration: none;
+  border-radius: 30px;
+}
+.category-wrapper {
+  padding: 5px;
+}
+
+.category-all {
+  background-color: #FFCACA;
+}
+.category-drawing {
+  background-color: #FFF3CA;
+}
+.category-video {
+  background-color: #CAE6FF;
+}
+.category-podcast {
+  background-color: #F8CAFF;
+}
+.category-cooking {
+  background-color: #FFE7CA;
+}
+.category-books {
+  background-color: #DBFFCA;
+}
+.category-gaming {
+  background-color: #E1CAFF;
+}
+.category-lifestyle {
+  background-color: red;
+}
+.category-music {
+  background-color: #CAFCFF;
+}
+
