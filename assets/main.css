@@ -68,7 +68,7 @@ header {
 	z-index: -1;
 }
 
-.footer-title, .footer-nav-item {
+.footer-title, .footer-nav-item, .footer-nav-item:hover {
 	color: white;
 }
 
