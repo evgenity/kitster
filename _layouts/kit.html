@@ -21,30 +21,23 @@ layout: default
 
 <h2 class="lead text-center font-italic"> "{{page.description}}"</h2>
 
-
-<div class="album py-5">
-  <div class="container">
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" data-masonry='{"percentPosition": true }' id="masonry-container">
-      
-      {%- for p in page.products -%}
-      <div class="col">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <img src="{{ site.baseurl }}{{p.img_url}}" class="card-img-top mb-3"  />
-            <h5 class="card-title">{{p.product_title}}</h5>
-            <p class="card-text">{{p.product_description}}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{p.yandex_market_link}}" style="color: white;">Яндекс.Маркет</a>
-              </div>
-            </div>
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+  {%- for p in page.products -%}
+    <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-header position-relative">
+        <img src="{{p.img_url}}" class="card-img-top shadow"/>
+        <div class="d-flex justify-content-between align-items-center position-absolute start-0 bottom-0 ms-3 mb-1" ">
+          <div class="btn-group">
+            <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{p.yandex_market_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase;">🛒 Яндекс.Маркет</a>
           </div>
         </div>
       </div>
-      {%- endfor -%}
-
-      
+      <div class="card-body">
+        <p class="card-title">{{p.product_title}}</p>
+        <p class="card-text">{{p.product_description}}</p>
+      </div>
     </div>
-  </div>
+    </div>
+  {%- endfor -%}
 </div>
