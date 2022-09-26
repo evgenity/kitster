@@ -1,4 +1,8 @@
 
+.kit-hero, .kit-hero-img {
+	border-radius: 25px;
+}
+
 
 .icon-list li::before {
 	display: block;
