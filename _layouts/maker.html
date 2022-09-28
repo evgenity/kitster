@@ -3,37 +3,26 @@ layout: default
 ---
 
 
-
-
-<div  class="mb-4 position-relative">
-  <img src="/assets/images/1500x500.png" alt="..." class="img img-fluid">
-  <div class="position-absolute" style="bottom: 0; left: 0px; background: rgba(255, 255, 255, 0.75);">
-          <div class="d-flex my-3 col-4">
-          <div class="position-relative">
-             <img height="48px" width="48px" src="{{ site.baseurl }}{{page.author-avatar}}" alt="..." class="rounded-circle">
-             <span class="position-absolute top-100 start-100 translate-middle badge rounded-pill bg-info" style="padding: 0px 1px 2px 2px;"><i class="bi bi-patch-check"></i></span>
-            </div>
-            <h1 class="ms-3 my-auto">{{page.name}}</h1>
-            </div>
-            <div class="m-1">Творческий деятель</div>
+<div class="kit-hero position-relative mb-5">
+      <img src="/assets/images/1500x500.png" alt="..." class="img img-fluid kit-hero-img">
+      <div class="position-absolute translate-middle top-50 start-50" style="width:80%;">
+        <h1 class="text-center">Наборы {{page.name}}</h1>
+        <h2 class="lead text-center"> Творческий деятель</h2>
+      </div>
+      <div class="position-absolute translate-middle-x bottom-0 start-50 m-3">
+        <div class="">
+          <div class="d-flex position-relative">
+            <img height="25px" width="25px" src="{{ site.baseurl }}{{page.author-avatar}}" alt="..." class="rounded-circle my-auto ">
+            <p class="ms-1 my-auto"><a class="link-dark" href="/makers/{{page.author}}">{{page.name}}</a></p>
+            <p class="badge rounded-pill bg-info my-auto ms-1" style="padding: 0px; font-size: 10px;"><i class="bi bi-patch-check"></i></p>
+          </div>
+        </div>
+      </div>
 </div>
-</div>
-
 
 
 <!-- <h2>Примеры работ</h2>
 <h2>Задонатить</h2> -->
-
-
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled"><a class="page-link">Наборы</a></li>
-    <li class="page-item"><a class="page-link link-dark" href="#">Донаты</a></li>
-    <li class="page-item"><a class="page-link link-dark" href="#">Работы</a></li>
-    <li class="page-item"><a class="page-link link-dark" href="#">Контакты</a></li>
-  </ul>
-</nav>
 
 
 
