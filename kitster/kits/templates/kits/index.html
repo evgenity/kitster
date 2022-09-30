@@ -1,3 +1,6 @@
+{% extends "kits/base.html" %}
+
+{% block content %}
 {% if latest_kits_list %}
     <ul>
     {% for kit in latest_kits_list %}
@@ -7,3 +10,4 @@
 {% else %}
     <p>No kits are available.</p>
 {% endif %}
+{% endblock %}

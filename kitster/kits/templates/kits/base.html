@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+
+{% include "kits/head.html" %}
+<style type="text/css">
+  header {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+<body class="d-flex flex-column h-100">
+  {% include "kits/header.html" %}
+  <div class="mainwrapper">
+  <!-- <video autoplay playsinline muted id="bgVideo" style="position: fixed; right: 0;bottom: 0;min-width: 100%; min-height: 100%; z-index: -500; -o-filter: blur(10px);filter: blur(10px);object-fit: cover; transform: scale(1.04)">
+    <source src="https://media.istockphoto.com/videos/pencil-lead-snapping-slow-motion-video-id591398700" type="video/mp4">
+    </video> -->
+    <div class="col-lg-9 mx-auto p-3 py-md-5">
+
+      
+      <!-- <main class="pb-5"> -->
+       {% block content %}
+       {% endblock content %}
+      <!-- </main> -->
+
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+
+</div>
+
+{% include "kits/footer.html" %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    var container = $("#masonry-container");
+
+    container.imagesLoaded(function () {
+        container.masonry();
+    });
+    сontainer.masonry();
+});
+</script>
+  </body>
+
+  </html>
