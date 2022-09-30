@@ -1,0 +1,9 @@
+{% if latest_kits_list %}
+    <ul>
+    {% for kit in latest_kits_list %}
+        <li><a href="{% url 'kits:detail' kit.id %}">{{ kit.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No kits are available.</p>
+{% endif %}

@@ -1,0 +1,6 @@
+<h1>{{ kit.title }}</h1>
+<ul>
+{% for product in kit.product_set.all %}
+    <li>{{ product.name }}</li>
+{% endfor %}
+</ul>
