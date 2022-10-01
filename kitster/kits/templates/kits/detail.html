@@ -1,6 +1,47 @@
-<h1>{{ kit.title }}</h1>
-<ul>
-{% for product in kit.product_set.all %}
-    <li>{{ product.name }}</li>
-{% endfor %}
-</ul>
+{% extends "kits/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="kit-hero position-relative mb-5">
+      <img src="{{kit.hero_cover.url}}" alt="..." class="img img-fluid kit-hero-img">
+      <div class="position-absolute translate-middle top-50 start-50" style="width:80%;">
+        <h1 class="text-center">{{kit.title}}</h1>
+        <h2 class="lead text-center"> {{kit.description}}</h2>
+      </div>
+      <div class="position-absolute translate-middle-x bottom-0 start-50 m-3">
+        <div class="">
+          <div class="d-flex position-relative">
+            <img height="25px" width="25px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle my-auto ">
+            <p class="ms-1 my-auto"><a class="link-dark" href="">{{kit.author.name}}</a></p>
+            <p class="badge rounded-pill bg-info my-auto ms-1" style="padding: 0px; font-size: 10px;"><i class="bi bi-patch-check"></i></p>
+          </div>
+          
+        </div>
+      </div>
+</div>
+
+<h2 class="lead text-center font-italic"> "{{kit.description}}"</h2>
+
+<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+  {% for product in kit.product_set.all %}
+    <div class="col-sm-6 col-lg-4 mb-4">
+    <div class="card">
+      <div class="card-header position-relative">
+        <img src="{{product.img_url.url}}" class="card-img-top shadow"/>
+        <div class="d-flex justify-content-between align-items-center position-absolute start-0 bottom-0 ms-3 mb-1" ">
+          <div class="btn-group">
+            <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{p.yandex_market_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase;" target="_blank">🛒 Яндекс.Маркет</a>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-title">{{product.name}}</p>
+        <p class="card-text">{{product.description}}</p>
+      </div>
+    </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
