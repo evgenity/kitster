@@ -23,3 +23,7 @@ def detail(request, kit_id):
 def maker(request, maker_name):
 	maker = get_object_or_404(Author, name=maker_name)
 	return render(request, 'kits/maker.html', {'maker': maker})
+
+def donate(request, maker_name):
+	maker = get_object_or_404(Author, name=maker_name)
+	return render(request, 'kits/donate.html', {'maker': maker})

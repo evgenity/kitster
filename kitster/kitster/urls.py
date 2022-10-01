@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('kits/', include('kits.urls')),
     path('<str:maker_name>/', kits.views.maker, name='maker'),
+    path('<str:maker_name>/donate/', kits.views.donate, name='donate'),
 ]
 
 print (urlpatterns)
