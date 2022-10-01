@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.http import HttpResponse
 
-from .models import Kit, Tag
+from .models import Kit, Tag, Author
 
 
 def index(request):
@@ -19,3 +19,7 @@ def index(request):
 def detail(request, kit_id):
 	kit = get_object_or_404(Kit, pk=kit_id)
 	return render(request, 'kits/detail.html', {'kit': kit})
+
+def maker(request, maker_name):
+	maker = get_object_or_404(Author, name=maker_name)
+	return render(request, 'kits/maker.html', {'maker': maker})

@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+# from kits.views import maker
+import kits
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('kits/', include('kits.urls')),
+    path('<str:maker_name>/', kits.views.maker, name='maker'),
 ]
 
 print (urlpatterns)

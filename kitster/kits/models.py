@@ -4,6 +4,7 @@ class Author(models.Model):
 	name = models.CharField(max_length=200)
 	social_link = models.CharField(max_length=200)
 	avatar = models.FileField(upload_to='static')
+	hero_cover = models.FileField(upload_to='static', default='static/1500x500.png')
 
 	def __str__(self):
 		return self.name
