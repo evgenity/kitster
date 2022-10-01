@@ -3,14 +3,16 @@ from django.shortcuts import render, get_object_or_404
 # Create your views here.
 from django.http import HttpResponse
 
-from .models import Kit
+from .models import Kit, Tag
 
 
 def index(request):
 	latest_kits_list = Kit.objects.order_by('-pub_date')[:5]
 	output = ', '.join([k.title for k in latest_kits_list])
+	tags = Tag.objects.all()
 	context = {
 		'latest_kits_list': latest_kits_list,
+		'tags': tags,
 	}
 	return render(request, 'kits/index.html', context)
 

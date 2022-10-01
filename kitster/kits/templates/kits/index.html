@@ -35,9 +35,9 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
 
 <div class="row mb-4">
   <div class="col-lg-8 d-flex flex-wrap">
-      {% for c in page.categories %}
+      {% for t in tags %}
         <div class="category-wrapper">
-          <a href="#" class="category {{c.class}}">{{c.name}}</a>
+          <a href="#" class="category {{t.class_addon}}">{{t.name}}</a>
         </div>
       {% endfor %}
     </div>
