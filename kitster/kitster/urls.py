@@ -19,10 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 # from kits.views import maker
 import kits
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('kits/', include('kits.urls')),
+    path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
     path('<str:maker_name>/', kits.views.maker, name='maker'),
     path('<str:maker_name>/donate/', kits.views.donate, name='donate'),
 ]
