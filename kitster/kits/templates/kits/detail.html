@@ -27,8 +27,9 @@
   {% for product in kit.product_set.all %}
     <div class="col-sm-6 col-lg-4 mb-4">
     <div class="card">
-      <div class="card-header position-relative">
-        <img src="{{product.img_url.url}}" class="card-img-top shadow"/>
+      <div class="card-header position-relative" style="
+       background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{product.img_url.url}});
+   ">
         <div class="d-flex justify-content-between align-items-center position-absolute start-0 bottom-0 ms-3 mb-1" ">
           <div class="btn-group">
             <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{p.yandex_market_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase;" target="_blank">🛒 Яндекс.Маркет</a>

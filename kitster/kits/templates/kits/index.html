@@ -47,8 +47,11 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
   {% for kit in latest_kits_list %}
   <div class="col-sm-6 col-lg-4 mb-4">
     <div class="card">
-      <div class="card-header position-relative">
-      <img class="card-img-top" src="{{kit.cover.url}}">
+      <div class="card-header position-relative" style="
+       background-image: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}});
+   ">
+        <!-- linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%),  -->
+      <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
 
         <div class="position-absolute img-badges">
             <div class="badge rounded-pill status-pro">💥 pro</div>
@@ -78,14 +81,15 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
   {% for kit in latest_kits_list %}
   <div class="col-sm-6 col-lg-4 mb-4">
     <div class="card">
-      <div class="card-header position-relative">
-      <img class="card-img-top" src="{{kit.cover.url}}">
+      <div class="card-header position-relative" style="
+       background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}});
+   ">
+        <!-- linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%),  -->
+      <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
 
         <div class="position-absolute img-badges">
-            {% if kit.author.pro %}
             <div class="badge rounded-pill status-pro">💥 pro</div>
-            {% endif %}
-            <div class="badge rounded-pill category {{kit.tag.class_addon}}">{{kit.tag.name}}</div>
+            <div class="badge rounded-pill category category-drawing">✏️ рисунок</div>
         </div>
       </div>
       <a class="card-block text-decoration-none stretched-link" href="{% url 'kits:detail' kit.id %}" ></a>  
@@ -104,6 +108,8 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
       </div>
       {% endfor %}
 </div>
+
+
 </div>
 </div>
 {% endblock %}
