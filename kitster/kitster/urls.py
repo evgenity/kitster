@@ -17,16 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-# from kits.views import maker
-import kits
+from kits.views import index, maker, donate
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
+    path('', index, name='index'),
     path('admin/', admin.site.urls),
     path('kits/', include('kits.urls')),
     path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
-    path('<str:maker_name>/', kits.views.maker, name='maker'),
-    path('<str:maker_name>/donate/', kits.views.donate, name='donate'),
+    path('<str:maker_name>/', maker, name='maker'),
+    path('<str:maker_name>/donate/', donate, name='donate'),
 ]
 
 print (urlpatterns)
