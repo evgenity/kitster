@@ -6,6 +6,9 @@
     <nav class="ms-auto d-flex align-items-center">
       <a class="mx-auto py-2 text-decoration-none header-item" href="{% url 'login' %}">Вход</a>
     </nav>
+    <nav class="d-flex align-items-center">
+      <a class="mx-auto py-2 text-decoration-none header-item" href="{% url 'signup' %}">Регистрация</a>
+    </nav>
     {% else %}
     <nav class="ms-auto d-flex align-items-center">
       <a class="mx-auto py-2 text-decoration-none header-item" href="{% url 'logout' %}">Выйти</a>
