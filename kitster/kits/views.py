@@ -27,3 +27,14 @@ def maker(request, maker_name):
 def donate(request, maker_name):
 	maker = get_object_or_404(Author, name=maker_name)
 	return render(request, 'kits/donate.html', {'maker': maker})
+
+def handler404(request, *args, **argv):
+    response = render(request, 'kits/404.html', {})
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render(request, 'kits/404.html', {})
+    response.status_code = 500
+    return response

@@ -29,4 +29,7 @@ urlpatterns = [
     path('<str:maker_name>/donate/', donate, name='donate'),
 ]
 
+handler404 = 'kits.views.handler404'
+handler500 = 'kits.views.handler500'
+
 print (urlpatterns)
