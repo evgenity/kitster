@@ -7,3 +7,4 @@ Gemfile.lock
 .DS_Store
 venv/
 __pycache__/
+kitster/.env

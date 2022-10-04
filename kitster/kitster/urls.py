@@ -33,5 +33,3 @@ urlpatterns = [
 
 handler404 = 'kits.views.handler404'
 handler500 = 'kits.views.handler500'
-
-print (urlpatterns)
