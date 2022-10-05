@@ -92,16 +92,27 @@ WSGI_APPLICATION = 'kitster.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'djongo',
+#            'NAME': 'kitster',
+#            'ENFORCE_SCHEMA': False,
+#             'CLIENT': {
+#                 'host': 'mongodb://{user}:{password}@139.59.175.122'.format(user=os.getenv('MONGODB_USER'), password=os.getenv('MONGODB_PASSWORD'))
+#             } 
+#        }
+#    }
+
 DATABASES = {
-       'default': {
-           'ENGINE': 'djongo',
-           'NAME': 'kitster',
-           'ENFORCE_SCHEMA': False,
-            'CLIENT': {
-                'host': 'mongodb://{user}:{password}@139.59.175.122'.format(user=os.getenv('MONGODB_USER'), password=os.getenv('MONGODB_PASSWORD'))
-            } 
-       }
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': os.getenv('PG_USER'),
+       'PASSWORD': os.getenv('PG_PASSWORD'),
+       'HOST': os.getenv('PG_HOST'),
+       'PORT': os.getenv('PG_PORT'),
+       'NAME' : os.getenv('NAME'),
+    }
+}
 
 
 # Password validation
