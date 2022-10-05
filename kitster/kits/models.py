@@ -34,7 +34,7 @@ class Product(models.Model):
 	kit = models.ForeignKey(Kit, on_delete=models.PROTECT)
 	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=200)
-	img_url = models.FileField(upload_to='static')
+	img_url = models.FileField(upload_to='static', max_length=255)
 	yandex_market_link = models.CharField(max_length=200)
 	yandex_market_link = models.CharField(max_length=200)
 
