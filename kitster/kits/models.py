@@ -36,7 +36,7 @@ class Product(models.Model):
 	description = models.CharField(max_length=200)
 	img_url = models.FileField(upload_to='static', max_length=255)
 	yandex_market_link = models.CharField(max_length=200)
-	yandex_market_link = models.CharField(max_length=200)
+	# yandex_market_link = models.CharField(max_length=200)
 
 	def __str__(self):
 		return self.name
