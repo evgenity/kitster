@@ -1,5 +1,26 @@
+label[for="id_username"], label[for="id_password"], label[for="id_password1"], label[for="id_password2"]   {
+	color:  white;
+	display: block;
+	text-transform: lowercase;
+}
 
-.kit-hero, .kit-hero-img {
+.btn-submit {
+	border: 1px solid white;
+	border-radius: 25px;
+	text-transform: lowercase;
+	font-weight: 300;
+	font-size: 0.9rem;
+	color: white;
+}
+
+#id_username, #id_password {
+	border-radius: 25px;
+	border: 0px solid;
+	/*text-align: center; */
+	padding: 5px 15px;
+}
+
+.kit-hero, .kit-hero-img{
 	border-radius: 25px;
 }
 
