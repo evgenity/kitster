@@ -4,7 +4,7 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	text-transform: lowercase;
 }
 
-.btn-submit {
+.btn-submit, .btn-submit:hover {
 	border: 1px solid white;
 	border-radius: 25px;
 	text-transform: lowercase;
@@ -13,7 +13,7 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	color: white;
 }
 
-#id_username, #id_password {
+#id_username, #id_password, #id_password1, #id_password2 {
 	border-radius: 25px;
 	border: 0px solid;
 	/*text-align: center; */

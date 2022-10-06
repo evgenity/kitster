@@ -24,22 +24,20 @@
   <form method="post" class="m-auto" action="{% url 'login' %}">
     {% csrf_token %}
     <div class="mb-2">
-        <label for="id_username" class="small">Электронная почта</label>
+        <label for="id_username" class="small mb-1">Электронная почта</label>
         {{ form.username }}
       </div>
-      <div class="mb-2">
-        <label for="id_password" class="small">Пароль</label>
+      <div class="mb-4">
+        <label for="id_password" class="small mb-1">Пароль</label>
         {{ form.password }}
       </div>
-      </tr>
-    </table>
     <div class='d-flex mb-3'>
       <input type="submit" value="Войти" class="btn btn-submit m-auto">
     </div>
     <input type="hidden" name="next" value="{{ next }}">
   </form>
 </div>
-<div class="d-flex">
+<div class="d-flex mb-3">
   <a class='m-auto link-light small' href="{% url 'password_reset' %}">восстановить пароль</a>
   </div>
   <div class="d-flex">
