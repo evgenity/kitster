@@ -10,7 +10,7 @@ from .models import Kit, Tag, Author, KitHit
 from django.db.models import Count
 
 def index(request):
-	top_kits_list = Kit.objects.order_by('-pub_date')[:6]
+	top_kits_list = Kit.objects.annotate(number_of_hits=Count('kithit')).order_by('-number_of_hits')[:6]
 	latest_kits_list = Kit.objects.order_by('-pub_date')[:3]
 	tags = Tag.objects.all()
 	context = {
