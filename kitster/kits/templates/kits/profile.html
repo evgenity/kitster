@@ -1,0 +1,18 @@
+{% extends "kits/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<table class="table">
+<tr>
+  <th>Набор</th>
+   <th>Количество просмотров</th>
+</tr>
+{% for kit_stats in kits_stats %}
+<tr>
+  <td>{{kit_stats.title}}</td>
+  <td>{{kit_stats.number_of_hits}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

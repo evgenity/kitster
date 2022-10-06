@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from kits.views import index, maker, donate
+from kits.views import index, maker, donate, profile
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     path('kits/', include('kits.urls')),
     path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
     path('<str:maker_name>/', maker, name='maker'),
+    path('<str:maker_name>/profile/', profile, name='profile'),
     path('<str:maker_name>/donate/', donate, name='donate'),
 ]
 
