@@ -7,11 +7,12 @@ from .models import Kit, Tag, Author
 
 
 def index(request):
-	latest_kits_list = Kit.objects.order_by('-pub_date')[:5]
-	output = ', '.join([k.title for k in latest_kits_list])
+	top_kits_list = Kit.objects.order_by('-pub_date')[:6]
+	latest_kits_list = Kit.objects.order_by('-pub_date')[:3]
 	tags = Tag.objects.all()
 	context = {
 		'latest_kits_list': latest_kits_list,
+		'top_kits_list' : top_kits_list,
 		'tags': tags,
 	}
 	return render(request, 'kits/index.html', context)
