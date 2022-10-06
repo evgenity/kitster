@@ -13,6 +13,12 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	color: white;
 }
 
+.btn-submit:hover {
+	background-color: #E8E2FF;
+	color: #7745D9 !important;
+}
+
+
 #id_username, #id_password, #id_password1, #id_password2 {
 	border-radius: 25px;
 	border: 0px solid;
@@ -81,6 +87,22 @@ nav {
 	font-size: 0.9rem;
 	line-height: 0.8;
 }
+
+nav:hover {
+	background-color: #E8E2FF;
+	color: #7745D9 !important;
+}
+
+nav:hover > a {
+	background-color: #E8E2FF;
+	color: #7745D9 !important;
+}
+
+.header-item:hover {
+	color: #7745D9 !important;
+}
+
+
 
 header {
 	background: #7745D9;
