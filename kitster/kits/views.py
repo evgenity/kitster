@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.http import Http404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from django.http import HttpResponse
@@ -50,7 +51,8 @@ def handler500(request, *args, **argv):
     response.status_code = 500
     return response
 
-def profile(request, maker_name):
-	maker = get_object_or_404(Author, name=maker_name)
+@login_required
+def profile(request):
+	maker = get_object_or_404(Author, name=request.user.username)
 	kits_stats = Kit.objects.annotate(number_of_hits=Count('kithit')).order_by('-number_of_hits').filter(author=maker).values()
-	return render(request, 'kits/profile.html', {'kits_stats': kits_stats})
+	return render(request, 'kits/profile.html', {'kits_stats': kits_stats, 'user': request.user})
