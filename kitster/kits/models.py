@@ -40,3 +40,20 @@ class Product(models.Model):
 
 	def __str__(self):
 		return self.name
+
+class KitHit(models.Model):
+	pub_date = models.DateTimeField('date hit')
+	kit = models.ForeignKey(Kit, on_delete=models.PROTECT)
+	ip = models.CharField(max_length=15)
+
+	@staticmethod
+	def get_client_ip(request):
+	    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+	    if x_forwarded_for:
+	        ip = x_forwarded_for.split(',')[0]
+	    else:
+	        ip = request.META.get('REMOTE_ADDR')
+	    return ip
+
+	def __str__(self):
+		return ' '.join(map(str, [self.pub_date, self.kit, self.ip]))
