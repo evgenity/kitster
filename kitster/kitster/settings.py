@@ -19,8 +19,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_URL = 'static/'
 SITE_ROOT = './'
 
+CSRF_TRUSTED_ORIGINS=['https://*.kitster.art']
+
+STATIC_ROOT = 'static'
+
 STATICFILES_DIRS = (
-  os.path.join(SITE_ROOT, 'static/'),
+  os.path.join(SITE_ROOT, 'static_common/'),
 )
 
 # Quick-start development settings - unsuitable for production
