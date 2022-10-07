@@ -1,3 +1,4 @@
+Sitemap: https://kitster.art/sitemap.xml
 User-Agent: *
 Disallow: /admin/
 Disallow: /profile/
