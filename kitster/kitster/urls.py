@@ -26,10 +26,10 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path('accounts/', include('django.contrib.auth.urls')),
     path('kits/', include('kits.urls')),
+    path("robots.txt", TemplateView.as_view(template_name="site/robots.txt", content_type="text/plain")),
     path('profile/', profile, name='profile'),
     path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
     path('<str:maker_name>/', maker, name='maker'),
-    
     path('<str:maker_name>/donate/', donate, name='donate'),
 ]
 
