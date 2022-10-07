@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Author(models.Model):
 	name = models.CharField(max_length=200)
@@ -29,6 +30,10 @@ class Kit(models.Model):
 
 	def __str__(self):
 		return self.title
+
+	def get_absolute_url(self):
+		url = reverse('kits:detail', args=[self.id] )
+		return url
 
 class Product(models.Model):
 	kit = models.ForeignKey(Kit, on_delete=models.PROTECT)

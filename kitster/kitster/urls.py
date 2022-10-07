@@ -19,6 +19,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 from kits.views import index, maker, donate, profile
 from django.views.generic.base import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
+
+from kits.models import Kit
+
+info_dict = {
+    'queryset': Kit.objects.all(),
+    'date_field': 'pub_date',
+}
+
+sitemaps = {'kit': GenericSitemap(info_dict, priority=0.6)}
 
 urlpatterns = [
     path('', index, name='index'),
@@ -27,6 +38,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('kits/', include('kits.urls')),
     path("robots.txt", TemplateView.as_view(template_name="site/robots.txt", content_type="text/plain")),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('profile/', profile, name='profile'),
     path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
     path('<str:maker_name>/', maker, name='maker'),
