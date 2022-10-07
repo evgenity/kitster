@@ -4,6 +4,14 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	text-transform: lowercase;
 }
 
+.hero-white {
+	color: white !important;
+}
+
+.hero-black {
+	color: black !important;
+}
+
 .btn-submit, .btn-submit:hover {
 	border: 1px solid white;
 	border-radius: 25px;

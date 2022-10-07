@@ -26,6 +26,7 @@ class Kit(models.Model):
 	author = models.ForeignKey(Author, on_delete=models.PROTECT)
 	cover = models.FileField(upload_to='static')
 	hero_cover = models.FileField(upload_to='static', default='static/1500x500.png')
+	class_addon = models.CharField(max_length=200)
 	description = models.CharField(max_length=200)
 
 	def __str__(self):

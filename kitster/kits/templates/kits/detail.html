@@ -6,14 +6,14 @@
 <div class="kit-hero position-relative mb-5">
       <img src="{{kit.hero_cover.url}}" alt="..." class="img img-fluid kit-hero-img">
       <div class="position-absolute translate-middle top-50 start-50" style="width:80%;">
-        <h1 class="text-center">{{kit.title}}</h1>
-        <h2 class="lead text-center"> {{kit.description}}</h2>
+        <h1 class="text-center {{kit.class_addon}}">{{kit.title}}</h1>
+        <h2 class="lead text-center {{kit.class_addon}}"> {{kit.description}}</h2>
       </div>
       <div class="position-absolute translate-middle-x bottom-0 start-50 m-3">
         <div class="">
           <div class="d-flex position-relative">
             <img height="25px" width="25px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle my-auto ">
-            <p class="ms-1 my-auto"><a class="link-dark" href="{% url 'maker' kit.author %}">{{kit.author.name}}</a></p>
+            <p class="ms-1 my-auto"><a class="link-dark {{kit.class_addon}}" href="{% url 'maker' kit.author %}">{{kit.author.name}}</a></p>
             <p class="badge rounded-pill bg-info my-auto ms-1" style="padding: 0px; font-size: 10px;"><i class="bi bi-patch-check"></i></p>
           </div>
           
