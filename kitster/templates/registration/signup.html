@@ -7,10 +7,17 @@
   body {
     background: #7745D9;
   }
+  header, footer {
+    display: none;
+  }
 </style>
 
-  <div class='d-flex'>
-  <form method="post" class="m-auto">
+<div class="w-100 m-auto" style="margin-top: 15% !important">
+<div class='d-flex mb-4 '>
+  <h1 class="mx-auto" style="color: white;  font-family: 'Dosis', serif; font-weight: 100;font-size: 2rem;">kitster</h1>
+</div>
+  <div class='d-flex col-6 mx-auto'>
+  <form method="post" class="m-auto w-100">
     {% csrf_token %}
      <div class="mb-2">
         <label for="id_username" class="small mb-1">Электронная почта</label>
@@ -29,5 +36,6 @@
     </div>
     <input type="hidden" name="next" value="{{ next }}">
   </form>
+</div>
 </div>
 {% endblock %}

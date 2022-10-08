@@ -32,6 +32,7 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	border: 0px solid;
 	/*text-align: center; */
 	padding: 5px 15px;
+	width: 100%;
 }
 
 .kit-hero, .kit-hero-img{
