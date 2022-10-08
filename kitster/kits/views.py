@@ -55,4 +55,4 @@ def handler500(request, *args, **argv):
 def profile(request):
 	maker = get_object_or_404(Author, name=request.user.username)
 	kits_stats = Kit.objects.annotate(number_of_hits=Count('kithit')).order_by('-number_of_hits').filter(author=maker).values()
-	return render(request, 'kits/profile.html', {'kits_stats': kits_stats, 'user': request.user})
+	return render(request, 'kits/profile.html', {'kits_stats': kits_stats, 'maker': maker})

@@ -3,10 +3,114 @@
 
 {% block content %}
 
+<h2 class="mt-3">Панель управления</h2>
+
+<div class="d-flex position-relative">
+  <img height="25px" width="25px" src="{{maker.avatar.url}}" alt="..." class="rounded-circle my-auto ">
+  <p class="ms-1 my-auto"><a class="link-dark {{kit.class_addon}}" href="{% url 'maker' maker %}">{{maker.name}}</a></p>
+  <p class="badge rounded-pill bg-info my-auto ms-1" style="padding: 0px; font-size: 10px;"><i class="bi bi-patch-check"></i></p>
+</div>
+
+<h2 class="mt-3">Начисления</h2>
+<span id='profit_plot'></span>
+
+<br>
+<h2 class="mt-3">Показы</h2>
+<span id='hits_plot'></span>
+<br>
+
+
+<style type="text/css">
+  #profit_plot > svg, #hits_plot > svg  {
+    border-radius: 25px;
+    padding:  25px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-time@3"></script>
+
+<script type="text/javascript">
+data = [
+{date:new Date('2022-08-01'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-02'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-03'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-04'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-05'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-06'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-07'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-08'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-09'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-10'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-11'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-12'), profit: Math.round(50* Math.random())},
+{date:new Date('2022-08-13'), profit: Math.round(50* Math.random())},
+]
+
+options = {
+  y: {
+    grid: true,
+    label: "Показов",
+    domain: [0, Math.max.apply(null, data.map(x => x['profit'])) * 20]
+  },
+  x: {
+    label: "День",
+    tickFormat: d3.timeFormat("%-d/%m"),
+    type: "band",
+  },
+  marks: [
+    Plot.line(data, {x: a => a.date, y: a => a.profit * 20, curve: "basis", marker: "circle", stroke: "#7745D9"}),
+    // Plot.text(data, {x: "date", y: a => a.profit * 20, text: d => d.profit == 0 ? '' : d.profit * 20, dy: 0, dx: 0}),
+  ],
+  height: 200,
+  width: 500,
+  style: {
+    background: "white",
+    // color: "black",
+  }
+}
+
+
+document.getElementById('hits_plot').append(Plot.plot(options));
+</script>
+
+<script type="text/javascript">
+
+
+options = {
+  y: {
+    label: "Доход (₽)",
+  },
+  x: {
+    label: "День",
+    tickFormat: d3.timeFormat("%-d/%m"),
+    type: "band",
+  },
+  marks: [
+    Plot.barY(data, {x: 'date', y : 'profit', rx: '5px'}),
+    Plot.text(data, {x: "date", y: "profit", text: d => d.profit == 0? '' : d.profit + '₽', dy: -10}),
+    Plot.ruleY([0]),
+  ],
+  height: 200,
+  width: 500,
+  style: {
+    background: "white",
+    color: "black",
+  }
+}
+
+document.getElementById('profit_plot').append(Plot.plot(options));
+
+</script>
+
+<script type="text/javascript"></script>
+
+<br>
+
 <table class="table">
 <tr>
   <th>Набор</th>
-   <th>Количество просмотров</th>
+   <th>Всего показов</th>
 </tr>
 {% for kit_stats in kits_stats %}
 <tr>
@@ -14,5 +118,14 @@
   <td>{{kit_stats.number_of_hits}}</td>
 </tr>
 {% endfor %}
+</table>
+
+<h2 class="mt-3">История операций</h2>
+<table class="table">
+<tr>
+  <td>2022-10-08</td>
+  <td>Бонус за регистрацию</td>
+  <td>+ 500 ₽</td>
+</tr>
 </table>
 {% endblock %}
