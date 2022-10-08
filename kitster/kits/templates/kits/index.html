@@ -10,11 +10,12 @@
       <p class="lead">Здесь профессионалы рассказывают чем пользуются и что любят</p>
     </div>
   </div>
-  <div style="border: 2px solid white;
+  <a href="{% url 'index' %}#second-page"
+  style="border: 2px solid white;
 height: 60px;
 width: 60px;
 border-radius: 30px;
-line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middle start-50 m-auto"><i class="bi bi-arrow-down m-auto" style="font-size: 2rem"></i></div>
+line-height: 0px; bottom: 100px; color: white !important;" class="d-flex position-absolute translate-middle start-50 m-auto"><i class="bi bi-arrow-down m-auto" style="font-size: 2rem"></i></a>
 <!-- <form class="d-flex" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
   <div class="row m-auto">
       <div class="col-8">
@@ -28,7 +29,7 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
 </div>
 </div>
 
-
+<a name="second-page"></a>
 <div class="second-page">
 <div class="col-lg-8 mx-auto p-3 py-md-5">
 <h2 class="fw-bold mt-5 mb-4">Лучшие наборы за месяц</h2>
@@ -37,13 +38,14 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
   <div class="col-lg-8 d-flex flex-wrap">
       {% for t in tags %}
         <div class="category-wrapper">
-          <a href="#" class="category {{t.class_addon}}">{{t.name}}</a>
+          <a href="{% url 'index' %}?t={{t.class_addon}}#second-page" class="category {{t.class_addon}} {% if t.class_addon == active_tag %}active-tag{% endif %}">{{t.name}}</a>
         </div>
       {% endfor %}
     </div>
   </div>
 
 <div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+  {% if top_kits_list %}
   {% for kit in top_kits_list %}
   <div class="col-sm-6 col-lg-4 mb-4">
     <div class="card">
@@ -75,6 +77,9 @@ line-height: 0px; bottom: 100px" class="d-flex position-absolute translate-middl
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <p>Нет наборов</p>
+      {% endif %}
 </div>
 
 

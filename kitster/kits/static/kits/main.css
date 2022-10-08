@@ -4,6 +4,23 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	text-transform: lowercase;
 }
 
+.category-wrapper > a:hover {
+	color: black;
+	border: 1px solid #E8E2FF;
+}
+
+.category-wrapper > a {
+	border: 1px solid transparent;
+}
+
+.active-tag {
+	border: 1px solid #7745D9 !important;
+}
+
+.active-tag:hover {
+	border: 1px solid #7745D9 !important;
+}
+
 .hero-white {
 	color: white !important;
 }

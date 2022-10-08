@@ -10,13 +10,17 @@ from .models import Kit, Tag, Author, KitHit
 from django.db.models import Count
 
 def index(request):
-	top_kits_list = Kit.objects.annotate(number_of_hits=Count('kithit')).order_by('-number_of_hits')[:6]
+	active_tag = request.GET.get('t', 'category-all')
+	top_kits_list = Kit.objects.annotate(number_of_hits=Count('kithit')).order_by('-number_of_hits')
+	if active_tag != 'category-all':
+		top_kits_list = top_kits_list.filter(tag__class_addon=active_tag)
 	latest_kits_list = Kit.objects.order_by('-pub_date')[:3]
 	tags = Tag.objects.all()
 	context = {
 		'latest_kits_list': latest_kits_list,
-		'top_kits_list' : top_kits_list,
+		'top_kits_list' : top_kits_list[:6],
 		'tags': tags,
+		'active_tag' : active_tag,
 	}
 	return render(request, 'kits/index.html', context)
 
