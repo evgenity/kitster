@@ -41,6 +41,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('profile/', profile, name='profile'),
     path('agreement/', TemplateView.as_view(template_name='kits/agreement.html'), name='agreement'),
+    path('partners/', TemplateView.as_view(template_name='kits/partners.html'), name='partners'),
     path('<str:maker_name>/', maker, name='maker'),
     path('<str:maker_name>/donate/', donate, name='donate'),
 ]
