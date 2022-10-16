@@ -75,8 +75,9 @@ label[for="id_username"], label[for="id_password"], label[for="id_password1"], l
 	background-position: center center;	
 }
 
-html, body {
+html, body, .mainwrapper {
 	font-family: Mulish;
+	/*background-color: red;*/
 }
 /*html,
 body {
@@ -103,15 +104,15 @@ body {
 	background-color: rgb(238, 237, 240);
 }
 
-nav {
+nav > a {
 	border: 1px solid white;
 	padding: 0px 15px;
 	margin-right: 10px;
 	border-radius: 25px;
 	text-transform: lowercase;
 	font-weight: 300;
-	font-size: 0.9rem;
-	line-height: 0.8;
+	font-size: 1rem;
+	line-height: 1;
 }
 
 nav:hover {
@@ -133,7 +134,7 @@ nav:hover > a {
 header {
 	background: #7745D9;
 	padding-top: 10px;
-	height: 55px;
+	height:75px;
 	position: fixed;
 	top: 0;
 	width: 100vw;
@@ -142,15 +143,17 @@ header {
 
 footer {
 	background: #7745D9;
+	font-size: 1.1rem;
 }
 
 .main-page {
 	background: #7745D9;
 	color: white;
-	height: 100vh;
+	/*height: 100vh;*/ /*debug*/
+	height: 1126px;
 	width: 100vw;
-	position:fixed;
-	top: 55px;
+	/*position:fixed;*/ /*debug*/
+	/*top: 75px;*/
 	z-index: -1;
 }
 
@@ -160,15 +163,15 @@ footer {
 
 .second-page {
 	background: #F5F5F5;
-	margin-top: 100vh;
+	/*margin-top: 100vh;*/ /*debug*/
 	z-index:1;
 }
 
 .header-logo {
-	padding-left: 16px;
+	/*padding-left: 16px;*/
 	font-family: 'Dosis', serif;
 	font-weight: 100;
-	font-size: 1.25rem;
+	font-size: 2rem;
 }
 
 .header-logo, .header-item  {
@@ -181,6 +184,9 @@ footer {
 .img-badges {
   bottom: 10px;
   left: 20px
+}
+.badge {
+	font-size: 1rem;
 }
 .card {
   border-radius: 30px;
@@ -204,6 +210,7 @@ footer {
   display: none;
 }
 .card-title {
+	font-size: 1.45rem;
 }
 .card-body {
   padding-bottom: 0px;
@@ -211,24 +218,28 @@ footer {
 .card-author {
   font-style: normal;
   color: #222529;
+  font-size: 1.15rem;
 }
 
 .status-pro {
   background: #4F5360;
-  padding: 6px;
+}
+.badge {
+  padding: 8px 20px;
+  font-weight: 300;
 }
 
 .category-wrapper >  a {
-  padding: 5px 10px;
+  padding: 5px 20px;
 }
 
 .category-wrapper {
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .category {
   color: black;
-  padding: 6px;
   text-decoration-style: none;
   text-decoration: none;
   border-radius: 30px;

@@ -2,120 +2,110 @@
 {% load static %}
 
 {% block content %}
-<div class="main-page">
-<div class="col-lg-9 mx-auto">
-<div class="p-3 pt-5">
-    <h1 class="display-4 fw-bold">Узнай больше про творчество</h1>
-    <div class="col-lg-12 ">
-      <p class="lead">Здесь мейкеры рассказывают чем пользуются и что любят</p>
+<div class="main-page d-flex justify-content-center" style="margin-top: 75px; padding: 0 14px;">
+  <div class="col col-lg-10">
+    <div style="margin-top:15%">
+      <h1 style="font-size:4rem; font-weight:800;">Узнай больше про творчество</h1>
+      <div class="col-lg-6">
+        <p class="lead" style="font-size: 2rem; font-weight:100 !important; line-height: 1.25;">Здесь мейкеры рассказывают чем пользуются и что любят</p>
+      </div>
     </div>
+    <a href="{% url 'index' %}#second-page"
+    style="border: 2px solid white;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    line-height: 0px; bottom: 100px; color: white !important;" class="d-flex position-absolute translate-middle start-50 m-auto"><i class="bi bi-arrow-down m-auto" style="font-size: 2rem"></i></a>
   </div>
-  <a href="{% url 'index' %}#second-page"
-  style="border: 2px solid white;
-height: 60px;
-width: 60px;
-border-radius: 30px;
-line-height: 0px; bottom: 100px; color: white !important;" class="d-flex position-absolute translate-middle start-50 m-auto"><i class="bi bi-arrow-down m-auto" style="font-size: 2rem"></i></a>
-<!-- <form class="d-flex" action="https://formkeep.com/f/1ac40a1ae348" accept-charset="UTF-8" enctype="multipart/form-data" method="POST">
-  <div class="row m-auto">
-      <div class="col-8">
-        <input class="form-control rounded-pill" id="inputMaker" name="nickname" placeholder="Найти по нику" >
-      </div>
-      <div class="col-3">
-        <button type="submit" class="btn btn-light rounded-pill">Найти</button>
-      </div>
-  </div>
-</form> -->
-</div>
 </div>
 
 <a name="second-page"></a>
-<div class="second-page">
-<div class="col-11 col-lg-8 mx-auto p-3 py-md-5">
-<h2 class="fw-bold mt-5 mb-4">Лучшие наборы за месяц</h2>
+<div class="second-page" style="overflow: auto; padding: 0 14px;">
+  <div class="col-11 col-lg-10 mx-auto" style="margin-top: 60px !important;">
+    <h2 class="fw-bold mt-5 mb-3" style="font-size:2.25rem;">Лучшие наборы за месяц</h2>
 
-<div class="row mb-4">
-  <div class="col-lg-8 d-flex flex-wrap">
-      {% for t in tags %}
+    <div class="row mb-3" style="margin-top: 25px;">
+      <div class="col-lg-8 d-flex flex-wrap">
+        {% for t in tags %}
         <div class="category-wrapper">
-          <a href="{% url 'index' %}?t={{t.class_addon}}#second-page" class="category {{t.class_addon}} {% if t.class_addon == active_tag %}active-tag{% endif %}">{{t.name}}</a>
+          <a href="{% url 'index' %}?t={{t.class_addon}}#second-page" class="category {{t.class_addon}} {% if t.class_addon == active_tag %}active-tag{% endif %}" style="font-size: 1.1rem;">{{t.name}}</a>
         </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
+
+    <div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
+      {% if top_kits_list %}
+      {% for kit in top_kits_list %}
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card">
+          <div class="card-header position-relative" style="
+          background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}}), linear-gradient(white, white);
+          ">
+          <!-- linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%),  -->
+          <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
+
+          <div class="position-absolute img-badges">
+            {% if kit.author.pro %}
+            <div class="badge rounded-pill status-pro">💥 pro</div>
+            {% endif %}
+            <div class="badge rounded-pill category {{kit.tag.class_addon}}">{{kit.tag.name}}</div>
+          </div>
+        </div>
+        <a class="card-block text-decoration-none" href="{% url 'kits:detail' kit.id %}" ></a>  
+        <div class="card-body">
+          <h6 class="card-title">{{kit.title}}</h6>
+          <p class="card-text">{{kit.description}}</p>
+        </div>
+        <div class="d-flex card-footer border-0">
+          <img height="36px" width="36px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle">
+          <div class="ms-2 small my-auto">
+            <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author.name}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>Нет наборов</p>
+    {% endif %}
   </div>
 
-<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
-  {% if top_kits_list %}
-  {% for kit in top_kits_list %}
-  <div class="col-sm-6 col-lg-4 mb-4">
-    <div class="card">
-      <div class="card-header position-relative" style="
-       background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}}), linear-gradient(white, white);
-   ">
+
+  <h2 class="fw-bold mt-5" style="font-size:2.25rem; margin-bottom: 35px;">Последние добавленные</h2>
+  <div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px; margin-bottom: 120px" id="masonry-container">
+    {% for kit in latest_kits_list %}
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-header position-relative" style="
+        background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}}), linear-gradient(white, white);
+        ">
         <!-- linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%),  -->
-      <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
+        <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
 
         <div class="position-absolute img-badges">
-            {% if kit.author.pro %}
-             <div class="badge rounded-pill status-pro">💥 pro</div>
-             {% endif %}
-             <div class="badge rounded-pill category {{kit.tag.class_addon}}">{{kit.tag.name}}</div>
+          {% if kit.author.pro %}
+          <div class="badge rounded-pill status-pro">💥 pro</div>
+          {% endif %}
+          <div class="badge rounded-pill category {{kit.tag.class_addon}}">{{kit.tag.name}}</div>
         </div>
       </div>
-      <a class="card-block text-decoration-none stretched-link" href="{% url 'kits:detail' kit.id %}" ></a>  
-      <div class="card-body">
+      <a class="card-block text-decoration-none" href="{% url 'kits:detail' kit.id %}" ></a>  
+      <div class="card-body mt-1">
         <h6 class="card-title">{{kit.title}}</h6>
         <p class="card-text">{{kit.description}}</p>
       </div>
       <div class="d-flex card-footer border-0">
-        <img height="24px" width="24px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle">
+        <img height="36px" width="36px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle">
         <div class="ms-2 small my-auto">
           <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author.name}}
           </span>
         </div>
-          </div>
-        </div>
       </div>
-      {% endfor %}
-      {% else %}
-      <p>Нет наборов</p>
-      {% endif %}
-</div>
-
-
-<h2 class="fw-bold mt-5 mb-4">Последние добавленные</h2>
-<div class="row" data-masonry='{"percentPosition": true }' style="position: relative; height: 690px;" id="masonry-container">
-  {% for kit in latest_kits_list %}
-  <div class="col-sm-6 col-lg-4 mb-4">
-    <div class="card">
-      <div class="card-header position-relative" style="
-       background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 35%, rgba(0,0,0,0.75) 100%), url({{kit.cover.url}}), linear-gradient(white, white);
-   ">
-        <!-- linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%),  -->
-      <!-- <img class="card-img-top" src="{{kit.cover.url}}"> -->
-
-        <div class="position-absolute img-badges">
-            {% if kit.author.pro %}
-             <div class="badge rounded-pill status-pro">💥 pro</div>
-             {% endif %}
-             <div class="badge rounded-pill category {{kit.tag.class_addon}}">{{kit.tag.name}}</div>
-        </div>
-      </div>
-      <a class="card-block text-decoration-none stretched-link" href="{% url 'kits:detail' kit.id %}" ></a>  
-      <div class="card-body">
-        <h6 class="card-title">{{kit.title}}</h6>
-        <p class="card-text">{{kit.description}}</p>
-      </div>
-      <div class="d-flex card-footer border-0">
-        <img height="24px" width="24px" src="{{kit.author.avatar.url}}" alt="..." class="rounded-circle">
-        <div class="ms-2 small my-auto">
-          <span class='link-dark card-author' href="#" style='padding: 0px'>{{kit.author.name}}
-          </span>
-        </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
 </div>
 
 
