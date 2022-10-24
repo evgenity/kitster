@@ -149,11 +149,11 @@ footer {
 .main-page {
 	background: #7745D9;
 	color: white;
-	/*height: 100vh;*/ /*debug*/
-	height: 1126px;
+	height: 100vh;
+	/* height: 1126px; */
 	width: 100vw;
-	/*position:fixed;*/ /*debug*/
-	/*top: 75px;*/
+	position:fixed;
+	top: 75px;
 	z-index: -1;
 }
 
@@ -163,7 +163,7 @@ footer {
 
 .second-page {
 	background: #F5F5F5;
-	/*margin-top: 100vh;*/ /*debug*/
+	margin-top: 100vh;
 	z-index:1;
 }
 
