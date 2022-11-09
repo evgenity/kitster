@@ -32,7 +32,11 @@
    ">
         <div class="d-flex justify-content-between align-items-center position-absolute start-0 bottom-0 ms-3 mb-1" ">
           <div class="btn-group">
-            <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{product.yandex_market_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase;" target="_blank">🛒 Яндекс.Маркет</a>
+            {% if product.yandex_market_link != 'default' %}
+            <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{product.yandex_market_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase; margin-bottom: 5px;" target="_blank">🛒 Яндекс.Маркет</a>
+            {% else %}
+            <a class="btn btn-warning" class="btn btn-sm btn-outline-secondary" href="{{product.other_link}}" style="color: white; border-radius: 25px; padding:2px 5px; text-transform: lowercase; margin-bottom: 5px;" target="_blank">Смотреть</a>
+            {% endif %} 
           </div>
         </div>
       </div>

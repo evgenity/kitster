@@ -25,7 +25,12 @@ STATIC_ROOT = 'static'
 
 STATICFILES_DIRS = (
   os.path.join(SITE_ROOT, 'static_common/'),
+  os.path.join(SITE_ROOT, 'user_uploaded_static/'),
 )
+
+print(STATICFILES_DIRS)
+
+MEDIA_ROOT = "user_uploaded_static/"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/

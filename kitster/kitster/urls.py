@@ -44,7 +44,10 @@ urlpatterns = [
     path('partners/', TemplateView.as_view(template_name='kits/partners.html'), name='partners'),
     path('<str:maker_name>/', maker, name='maker'),
     path('<str:maker_name>/donate/', donate, name='donate'),
-]
+] 
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_ROOT, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'kits.views.handler404'
 handler500 = 'kits.views.handler500'
