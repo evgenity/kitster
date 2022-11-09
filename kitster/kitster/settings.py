@@ -30,7 +30,8 @@ STATICFILES_DIRS = (
 
 print(STATICFILES_DIRS)
 
-MEDIA_ROOT = "user_uploaded_static/"
+MEDIA_ROOT = "media/"
+MEDIA_URL = 'media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/

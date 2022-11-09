@@ -4,8 +4,8 @@ from django.urls import reverse
 class Author(models.Model):
 	name = models.CharField(max_length=200)
 	social_link = models.CharField(max_length=200)
-	avatar = models.FileField(upload_to='user_uploaded_static')
-	hero_cover = models.FileField(upload_to='user_uploaded_static', default='static/1500x500.png')
+	avatar = models.FileField(upload_to='authors')
+	hero_cover = models.FileField(upload_to='authors', default='static/1500x500.png')
 	pro = models.BooleanField(default=True)
 
 	def __str__(self):
@@ -24,8 +24,8 @@ class Kit(models.Model):
 	tag = models.ForeignKey(Tag, on_delete=models.PROTECT, null=True)
 	title = models.CharField(max_length=200)
 	author = models.ForeignKey(Author, on_delete=models.PROTECT)
-	cover = models.FileField(upload_to='user_uploaded_static')
-	hero_cover = models.FileField(upload_to='user_uploaded_static', default='static/1500x500.png')
+	cover = models.FileField(upload_to='kits')
+	hero_cover = models.FileField(upload_to='kits', default='static/1500x500.png')
 	class_addon = models.CharField(max_length=200)
 	description = models.CharField(max_length=200)
 
@@ -40,7 +40,7 @@ class Product(models.Model):
 	kit = models.ForeignKey(Kit, on_delete=models.PROTECT)
 	name = models.CharField(max_length=200)
 	description = models.CharField(max_length=200)
-	img_url = models.FileField(upload_to='user_uploaded_static', max_length=255)
+	img_url = models.FileField(upload_to='products', max_length=255)
 	yandex_market_link = models.CharField(max_length=200)
 	other_link = models.CharField(max_length=200, blank=True, null=True)
 
