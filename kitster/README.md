@@ -1,0 +1,1 @@
+find . -name '*.jpeg' -o -name '*.png' -o -name '*.webp' -exec sips -s format jpeg -s formatOptions low {} --out {} \;
