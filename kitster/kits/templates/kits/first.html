@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-{% include "kits/head.html" %}
-
+<head>
+  {% include "kits/head.html" %}
+  {% block meta_social %}
+  {% endblock meta_social %}
+</head>
 <body>
   {% include "kits/header.html" %}
   <div class="mainwrapper">

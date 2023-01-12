@@ -1,6 +1,21 @@
 {% extends "kits/base.html" %}
 {% load static %}
 
+{% block meta_social %}
+
+  <!--  Essential META Tags -->
+  <meta property="og:title" content="Наборы от {{maker.name}}">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{{ request.get_host }}{{ maker.hero_cover.url }}">
+  <meta property="og:url" content="https://kitster.art/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!--  Non-Essential, But Recommended -->
+  <meta property="og:description" content="Узнай чем пользуется {{maker.name}}">
+  <meta property="og:site_name" content="Kitster">
+  <meta name="twitter:image:alt" content="Image Not Found">
+{% endblock %}
+
 {% block content %}
 <div class="kit-hero position-relative mb-5">
       <img height=500px width=1500px src="{{ maker.hero_cover.url }}" alt="..." class="img img-fluid kit-hero-img">

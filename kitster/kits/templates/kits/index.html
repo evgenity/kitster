@@ -1,6 +1,20 @@
 {% extends "kits/first.html" %}
 {% load static %}
 
+{% block meta_social %}
+  <!--  Essential META Tags -->
+  <meta property="og:title" content="Наборы для творчества">
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="{{ request.build_absolute_uri |slice:':-1'}}{% static 'root/social-1200x630.png' %}">
+  <meta property="og:url" content="https://kitster.art/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!--  Non-Essential, But Recommended -->
+  <meta property="og:description" content="Наборы для творчества от профессионалов и любителей">
+  <meta property="og:site_name" content="Kitster">
+  <meta name="twitter:image:alt" content="Image Not Found">
+{% endblock %}
+
 {% block content %}
 <div class="main-page d-flex justify-content-center">
   <div class="col-lg-10 col-11 mx-auto">
