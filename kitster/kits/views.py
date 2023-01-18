@@ -30,7 +30,7 @@ def detail(request, kit_id):
 	except Kit.DoesNotExist:
 		raise Http404("No Kit matches the given query.")
 
-	ip = KitHit.get_client_ip(request)
+	ip = KitHit.get_client_ip(request)[0:15]
 	kithit = KitHit(pub_date=timezone.now(), kit=kit, ip=ip)
 	kithit.save()
 
